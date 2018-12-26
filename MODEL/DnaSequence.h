@@ -42,7 +42,7 @@ public:
 
     Nucleotide &operator[](int index) const;
 
-    size_t seqlength() const;
+    size_t sequencelength() const;
 
     char *getsequence();
 
