@@ -122,6 +122,33 @@ excellenteam_erez_c_dna_analyzer_omairino/fast:
 	$(MAKE) -f CMakeFiles\excellenteam_erez_c_dna_analyzer_omairino.dir\build.make CMakeFiles/excellenteam_erez_c_dna_analyzer_omairino.dir/build
 .PHONY : excellenteam_erez_c_dna_analyzer_omairino/fast
 
+CONTROLLER/Controller.obj: CONTROLLER/Controller.cpp.obj
+
+.PHONY : CONTROLLER/Controller.obj
+
+# target to build an object file
+CONTROLLER/Controller.cpp.obj:
+	$(MAKE) -f CMakeFiles\excellenteam_erez_c_dna_analyzer_omairino.dir\build.make CMakeFiles/excellenteam_erez_c_dna_analyzer_omairino.dir/CONTROLLER/Controller.cpp.obj
+.PHONY : CONTROLLER/Controller.cpp.obj
+
+CONTROLLER/Controller.i: CONTROLLER/Controller.cpp.i
+
+.PHONY : CONTROLLER/Controller.i
+
+# target to preprocess a source file
+CONTROLLER/Controller.cpp.i:
+	$(MAKE) -f CMakeFiles\excellenteam_erez_c_dna_analyzer_omairino.dir\build.make CMakeFiles/excellenteam_erez_c_dna_analyzer_omairino.dir/CONTROLLER/Controller.cpp.i
+.PHONY : CONTROLLER/Controller.cpp.i
+
+CONTROLLER/Controller.s: CONTROLLER/Controller.cpp.s
+
+.PHONY : CONTROLLER/Controller.s
+
+# target to generate assembly for a file
+CONTROLLER/Controller.cpp.s:
+	$(MAKE) -f CMakeFiles\excellenteam_erez_c_dna_analyzer_omairino.dir\build.make CMakeFiles/excellenteam_erez_c_dna_analyzer_omairino.dir/CONTROLLER/Controller.cpp.s
+.PHONY : CONTROLLER/Controller.cpp.s
+
 CONTROLLER/main.obj: CONTROLLER/main.cpp.obj
 
 .PHONY : CONTROLLER/main.obj
@@ -149,6 +176,60 @@ CONTROLLER/main.cpp.s:
 	$(MAKE) -f CMakeFiles\excellenteam_erez_c_dna_analyzer_omairino.dir\build.make CMakeFiles/excellenteam_erez_c_dna_analyzer_omairino.dir/CONTROLLER/main.cpp.s
 .PHONY : CONTROLLER/main.cpp.s
 
+MODEL/DnaSequence.obj: MODEL/DnaSequence.cpp.obj
+
+.PHONY : MODEL/DnaSequence.obj
+
+# target to build an object file
+MODEL/DnaSequence.cpp.obj:
+	$(MAKE) -f CMakeFiles\excellenteam_erez_c_dna_analyzer_omairino.dir\build.make CMakeFiles/excellenteam_erez_c_dna_analyzer_omairino.dir/MODEL/DnaSequence.cpp.obj
+.PHONY : MODEL/DnaSequence.cpp.obj
+
+MODEL/DnaSequence.i: MODEL/DnaSequence.cpp.i
+
+.PHONY : MODEL/DnaSequence.i
+
+# target to preprocess a source file
+MODEL/DnaSequence.cpp.i:
+	$(MAKE) -f CMakeFiles\excellenteam_erez_c_dna_analyzer_omairino.dir\build.make CMakeFiles/excellenteam_erez_c_dna_analyzer_omairino.dir/MODEL/DnaSequence.cpp.i
+.PHONY : MODEL/DnaSequence.cpp.i
+
+MODEL/DnaSequence.s: MODEL/DnaSequence.cpp.s
+
+.PHONY : MODEL/DnaSequence.s
+
+# target to generate assembly for a file
+MODEL/DnaSequence.cpp.s:
+	$(MAKE) -f CMakeFiles\excellenteam_erez_c_dna_analyzer_omairino.dir\build.make CMakeFiles/excellenteam_erez_c_dna_analyzer_omairino.dir/MODEL/DnaSequence.cpp.s
+.PHONY : MODEL/DnaSequence.cpp.s
+
+VIEW/CLI.obj: VIEW/CLI.cpp.obj
+
+.PHONY : VIEW/CLI.obj
+
+# target to build an object file
+VIEW/CLI.cpp.obj:
+	$(MAKE) -f CMakeFiles\excellenteam_erez_c_dna_analyzer_omairino.dir\build.make CMakeFiles/excellenteam_erez_c_dna_analyzer_omairino.dir/VIEW/CLI.cpp.obj
+.PHONY : VIEW/CLI.cpp.obj
+
+VIEW/CLI.i: VIEW/CLI.cpp.i
+
+.PHONY : VIEW/CLI.i
+
+# target to preprocess a source file
+VIEW/CLI.cpp.i:
+	$(MAKE) -f CMakeFiles\excellenteam_erez_c_dna_analyzer_omairino.dir\build.make CMakeFiles/excellenteam_erez_c_dna_analyzer_omairino.dir/VIEW/CLI.cpp.i
+.PHONY : VIEW/CLI.cpp.i
+
+VIEW/CLI.s: VIEW/CLI.cpp.s
+
+.PHONY : VIEW/CLI.s
+
+# target to generate assembly for a file
+VIEW/CLI.cpp.s:
+	$(MAKE) -f CMakeFiles\excellenteam_erez_c_dna_analyzer_omairino.dir\build.make CMakeFiles/excellenteam_erez_c_dna_analyzer_omairino.dir/VIEW/CLI.cpp.s
+.PHONY : VIEW/CLI.cpp.s
+
 # Help Target
 help:
 	@echo The following are some of the valid targets for this Makefile:
@@ -158,9 +239,18 @@ help:
 	@echo ... excellenteam_erez_c_dna_analyzer_omairino
 	@echo ... edit_cache
 	@echo ... rebuild_cache
+	@echo ... CONTROLLER/Controller.obj
+	@echo ... CONTROLLER/Controller.i
+	@echo ... CONTROLLER/Controller.s
 	@echo ... CONTROLLER/main.obj
 	@echo ... CONTROLLER/main.i
 	@echo ... CONTROLLER/main.s
+	@echo ... MODEL/DnaSequence.obj
+	@echo ... MODEL/DnaSequence.i
+	@echo ... MODEL/DnaSequence.s
+	@echo ... VIEW/CLI.obj
+	@echo ... VIEW/CLI.i
+	@echo ... VIEW/CLI.s
 .PHONY : help
 
 

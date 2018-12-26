@@ -1,5 +1,8 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/excellenteam_erez_c_dna_analyzer_omairino.dir/MODEL/DnaSequence.cpp.obj"
   "CMakeFiles/excellenteam_erez_c_dna_analyzer_omairino.dir/CONTROLLER/main.cpp.obj"
+  "CMakeFiles/excellenteam_erez_c_dna_analyzer_omairino.dir/VIEW/CLI.cpp.obj"
+  "CMakeFiles/excellenteam_erez_c_dna_analyzer_omairino.dir/CONTROLLER/Controller.cpp.obj"
   "excellenteam_erez_c_dna_analyzer_omairino.pdb"
   "excellenteam_erez_c_dna_analyzer_omairino.exe"
   "excellenteam_erez_c_dna_analyzer_omairino.exe.manifest"
