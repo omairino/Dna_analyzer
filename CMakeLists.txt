@@ -3,4 +3,4 @@ project(excellenteam_erez_c_dna_analyzer_omairino)
 
 set(CMAKE_CXX_STANDARD 98)
 
-add_executable(excellenteam_erez_c_dna_analyzer_omairino MODEL/DnaSequence.cpp MODEL/DnaSequence.h CONTROLLER/main.cpp VIEW/CLI.cpp VIEW/CLI.h CONTROLLER/Controller.cpp CONTROLLER/Controller.h)
+add_executable(excellenteam_erez_c_dna_analyzer_omairino MODEL/DnaSequence.cpp MODEL/DnaSequence.h CONTROLLER/main.cpp VIEW/CLI.cpp VIEW/CLI.h CONTROLLER/Controller.cpp CONTROLLER/Controller.h MODEL/Command.cpp MODEL/Command.h MODEL/WriteReadFile.cpp MODEL/WriteReadFile.h)

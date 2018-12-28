@@ -176,6 +176,33 @@ CONTROLLER/main.cpp.s:
 	$(MAKE) -f CMakeFiles\excellenteam_erez_c_dna_analyzer_omairino.dir\build.make CMakeFiles/excellenteam_erez_c_dna_analyzer_omairino.dir/CONTROLLER/main.cpp.s
 .PHONY : CONTROLLER/main.cpp.s
 
+MODEL/Command.obj: MODEL/Command.cpp.obj
+
+.PHONY : MODEL/Command.obj
+
+# target to build an object file
+MODEL/Command.cpp.obj:
+	$(MAKE) -f CMakeFiles\excellenteam_erez_c_dna_analyzer_omairino.dir\build.make CMakeFiles/excellenteam_erez_c_dna_analyzer_omairino.dir/MODEL/Command.cpp.obj
+.PHONY : MODEL/Command.cpp.obj
+
+MODEL/Command.i: MODEL/Command.cpp.i
+
+.PHONY : MODEL/Command.i
+
+# target to preprocess a source file
+MODEL/Command.cpp.i:
+	$(MAKE) -f CMakeFiles\excellenteam_erez_c_dna_analyzer_omairino.dir\build.make CMakeFiles/excellenteam_erez_c_dna_analyzer_omairino.dir/MODEL/Command.cpp.i
+.PHONY : MODEL/Command.cpp.i
+
+MODEL/Command.s: MODEL/Command.cpp.s
+
+.PHONY : MODEL/Command.s
+
+# target to generate assembly for a file
+MODEL/Command.cpp.s:
+	$(MAKE) -f CMakeFiles\excellenteam_erez_c_dna_analyzer_omairino.dir\build.make CMakeFiles/excellenteam_erez_c_dna_analyzer_omairino.dir/MODEL/Command.cpp.s
+.PHONY : MODEL/Command.cpp.s
+
 MODEL/DnaSequence.obj: MODEL/DnaSequence.cpp.obj
 
 .PHONY : MODEL/DnaSequence.obj
@@ -202,6 +229,33 @@ MODEL/DnaSequence.s: MODEL/DnaSequence.cpp.s
 MODEL/DnaSequence.cpp.s:
 	$(MAKE) -f CMakeFiles\excellenteam_erez_c_dna_analyzer_omairino.dir\build.make CMakeFiles/excellenteam_erez_c_dna_analyzer_omairino.dir/MODEL/DnaSequence.cpp.s
 .PHONY : MODEL/DnaSequence.cpp.s
+
+MODEL/WriteReadFile.obj: MODEL/WriteReadFile.cpp.obj
+
+.PHONY : MODEL/WriteReadFile.obj
+
+# target to build an object file
+MODEL/WriteReadFile.cpp.obj:
+	$(MAKE) -f CMakeFiles\excellenteam_erez_c_dna_analyzer_omairino.dir\build.make CMakeFiles/excellenteam_erez_c_dna_analyzer_omairino.dir/MODEL/WriteReadFile.cpp.obj
+.PHONY : MODEL/WriteReadFile.cpp.obj
+
+MODEL/WriteReadFile.i: MODEL/WriteReadFile.cpp.i
+
+.PHONY : MODEL/WriteReadFile.i
+
+# target to preprocess a source file
+MODEL/WriteReadFile.cpp.i:
+	$(MAKE) -f CMakeFiles\excellenteam_erez_c_dna_analyzer_omairino.dir\build.make CMakeFiles/excellenteam_erez_c_dna_analyzer_omairino.dir/MODEL/WriteReadFile.cpp.i
+.PHONY : MODEL/WriteReadFile.cpp.i
+
+MODEL/WriteReadFile.s: MODEL/WriteReadFile.cpp.s
+
+.PHONY : MODEL/WriteReadFile.s
+
+# target to generate assembly for a file
+MODEL/WriteReadFile.cpp.s:
+	$(MAKE) -f CMakeFiles\excellenteam_erez_c_dna_analyzer_omairino.dir\build.make CMakeFiles/excellenteam_erez_c_dna_analyzer_omairino.dir/MODEL/WriteReadFile.cpp.s
+.PHONY : MODEL/WriteReadFile.cpp.s
 
 VIEW/CLI.obj: VIEW/CLI.cpp.obj
 
@@ -245,9 +299,15 @@ help:
 	@echo ... CONTROLLER/main.obj
 	@echo ... CONTROLLER/main.i
 	@echo ... CONTROLLER/main.s
+	@echo ... MODEL/Command.obj
+	@echo ... MODEL/Command.i
+	@echo ... MODEL/Command.s
 	@echo ... MODEL/DnaSequence.obj
 	@echo ... MODEL/DnaSequence.i
 	@echo ... MODEL/DnaSequence.s
+	@echo ... MODEL/WriteReadFile.obj
+	@echo ... MODEL/WriteReadFile.i
+	@echo ... MODEL/WriteReadFile.s
 	@echo ... VIEW/CLI.obj
 	@echo ... VIEW/CLI.i
 	@echo ... VIEW/CLI.s

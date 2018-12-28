@@ -89,10 +89,22 @@
 		<Unit filename="C:/Users/Administrator/Desktop/project DNA/excellenteam-erez-c-dna-analyzer-omairino/CONTROLLER/main.cpp">
 			<Option target="excellenteam_erez_c_dna_analyzer_omairino"/>
 		</Unit>
+		<Unit filename="C:/Users/Administrator/Desktop/project DNA/excellenteam-erez-c-dna-analyzer-omairino/MODEL/Command.cpp">
+			<Option target="excellenteam_erez_c_dna_analyzer_omairino"/>
+		</Unit>
+		<Unit filename="C:/Users/Administrator/Desktop/project DNA/excellenteam-erez-c-dna-analyzer-omairino/MODEL/Command.h">
+			<Option target="excellenteam_erez_c_dna_analyzer_omairino"/>
+		</Unit>
 		<Unit filename="C:/Users/Administrator/Desktop/project DNA/excellenteam-erez-c-dna-analyzer-omairino/MODEL/DnaSequence.cpp">
 			<Option target="excellenteam_erez_c_dna_analyzer_omairino"/>
 		</Unit>
 		<Unit filename="C:/Users/Administrator/Desktop/project DNA/excellenteam-erez-c-dna-analyzer-omairino/MODEL/DnaSequence.h">
+			<Option target="excellenteam_erez_c_dna_analyzer_omairino"/>
+		</Unit>
+		<Unit filename="C:/Users/Administrator/Desktop/project DNA/excellenteam-erez-c-dna-analyzer-omairino/MODEL/WriteReadFile.cpp">
+			<Option target="excellenteam_erez_c_dna_analyzer_omairino"/>
+		</Unit>
+		<Unit filename="C:/Users/Administrator/Desktop/project DNA/excellenteam-erez-c-dna-analyzer-omairino/MODEL/WriteReadFile.h">
 			<Option target="excellenteam_erez_c_dna_analyzer_omairino"/>
 		</Unit>
 		<Unit filename="C:/Users/Administrator/Desktop/project DNA/excellenteam-erez-c-dna-analyzer-omairino/VIEW/CLI.cpp">

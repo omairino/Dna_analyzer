@@ -47,8 +47,6 @@ DnaSequence::DnaSequence(const char *sequence) {
 }
 
 DnaSequence::DnaSequence(const std::string &sequence) {
-
-
     try {
         m_length = (int) sequence.length();
         const char *str = sequence.c_str();
