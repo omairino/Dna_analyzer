@@ -121,13 +121,27 @@ CMakeFiles/excellenteam_erez_c_dna_analyzer_omairino.dir/MODEL/WriteReadFile.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/excellenteam_erez_c_dna_analyzer_omairino.dir/MODEL/WriteReadFile.cpp.s"
 	"C:\Program Files (x86)\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE" $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Users\Administrator\Desktop\project DNA\excellenteam-erez-c-dna-analyzer-omairino\MODEL\WriteReadFile.cpp" -o CMakeFiles\excellenteam_erez_c_dna_analyzer_omairino.dir\MODEL\WriteReadFile.cpp.s
 
+CMakeFiles/excellenteam_erez_c_dna_analyzer_omairino.dir/MODEL/CommandParser.cpp.obj: CMakeFiles/excellenteam_erez_c_dna_analyzer_omairino.dir/flags.make
+CMakeFiles/excellenteam_erez_c_dna_analyzer_omairino.dir/MODEL/CommandParser.cpp.obj: ../MODEL/CommandParser.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="C:\Users\Administrator\Desktop\project DNA\excellenteam-erez-c-dna-analyzer-omairino\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/excellenteam_erez_c_dna_analyzer_omairino.dir/MODEL/CommandParser.cpp.obj"
+	"C:\Program Files (x86)\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE"  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\excellenteam_erez_c_dna_analyzer_omairino.dir\MODEL\CommandParser.cpp.obj -c "C:\Users\Administrator\Desktop\project DNA\excellenteam-erez-c-dna-analyzer-omairino\MODEL\CommandParser.cpp"
+
+CMakeFiles/excellenteam_erez_c_dna_analyzer_omairino.dir/MODEL/CommandParser.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/excellenteam_erez_c_dna_analyzer_omairino.dir/MODEL/CommandParser.cpp.i"
+	"C:\Program Files (x86)\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE" $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\Users\Administrator\Desktop\project DNA\excellenteam-erez-c-dna-analyzer-omairino\MODEL\CommandParser.cpp" > CMakeFiles\excellenteam_erez_c_dna_analyzer_omairino.dir\MODEL\CommandParser.cpp.i
+
+CMakeFiles/excellenteam_erez_c_dna_analyzer_omairino.dir/MODEL/CommandParser.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/excellenteam_erez_c_dna_analyzer_omairino.dir/MODEL/CommandParser.cpp.s"
+	"C:\Program Files (x86)\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE" $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Users\Administrator\Desktop\project DNA\excellenteam-erez-c-dna-analyzer-omairino\MODEL\CommandParser.cpp" -o CMakeFiles\excellenteam_erez_c_dna_analyzer_omairino.dir\MODEL\CommandParser.cpp.s
+
 # Object files for target excellenteam_erez_c_dna_analyzer_omairino
 excellenteam_erez_c_dna_analyzer_omairino_OBJECTS = \
 "CMakeFiles/excellenteam_erez_c_dna_analyzer_omairino.dir/MODEL/DnaSequence.cpp.obj" \
 "CMakeFiles/excellenteam_erez_c_dna_analyzer_omairino.dir/VIEW/Cmd.cpp.obj" \
 "CMakeFiles/excellenteam_erez_c_dna_analyzer_omairino.dir/CONTROLLER/Controller.cpp.obj" \
 "CMakeFiles/excellenteam_erez_c_dna_analyzer_omairino.dir/MODEL/Command.cpp.obj" \
-"CMakeFiles/excellenteam_erez_c_dna_analyzer_omairino.dir/MODEL/WriteReadFile.cpp.obj"
+"CMakeFiles/excellenteam_erez_c_dna_analyzer_omairino.dir/MODEL/WriteReadFile.cpp.obj" \
+"CMakeFiles/excellenteam_erez_c_dna_analyzer_omairino.dir/MODEL/CommandParser.cpp.obj"
 
 # External object files for target excellenteam_erez_c_dna_analyzer_omairino
 excellenteam_erez_c_dna_analyzer_omairino_EXTERNAL_OBJECTS =
@@ -137,11 +151,12 @@ excellenteam_erez_c_dna_analyzer_omairino.exe: CMakeFiles/excellenteam_erez_c_dn
 excellenteam_erez_c_dna_analyzer_omairino.exe: CMakeFiles/excellenteam_erez_c_dna_analyzer_omairino.dir/CONTROLLER/Controller.cpp.obj
 excellenteam_erez_c_dna_analyzer_omairino.exe: CMakeFiles/excellenteam_erez_c_dna_analyzer_omairino.dir/MODEL/Command.cpp.obj
 excellenteam_erez_c_dna_analyzer_omairino.exe: CMakeFiles/excellenteam_erez_c_dna_analyzer_omairino.dir/MODEL/WriteReadFile.cpp.obj
+excellenteam_erez_c_dna_analyzer_omairino.exe: CMakeFiles/excellenteam_erez_c_dna_analyzer_omairino.dir/MODEL/CommandParser.cpp.obj
 excellenteam_erez_c_dna_analyzer_omairino.exe: CMakeFiles/excellenteam_erez_c_dna_analyzer_omairino.dir/build.make
 excellenteam_erez_c_dna_analyzer_omairino.exe: CMakeFiles/excellenteam_erez_c_dna_analyzer_omairino.dir/linklibs.rsp
 excellenteam_erez_c_dna_analyzer_omairino.exe: CMakeFiles/excellenteam_erez_c_dna_analyzer_omairino.dir/objects1.rsp
 excellenteam_erez_c_dna_analyzer_omairino.exe: CMakeFiles/excellenteam_erez_c_dna_analyzer_omairino.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="C:\Users\Administrator\Desktop\project DNA\excellenteam-erez-c-dna-analyzer-omairino\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_6) "Linking CXX executable excellenteam_erez_c_dna_analyzer_omairino.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="C:\Users\Administrator\Desktop\project DNA\excellenteam-erez-c-dna-analyzer-omairino\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_7) "Linking CXX executable excellenteam_erez_c_dna_analyzer_omairino.exe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\excellenteam_erez_c_dna_analyzer_omairino.dir\link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

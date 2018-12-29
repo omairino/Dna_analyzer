@@ -57,7 +57,8 @@ private:
 
 };
 
-static size_t ids = 0;
+static size_t s_id = 0;
+static size_t s_name = 0;
 struct DNA {
     size_t id;
     std::string name;

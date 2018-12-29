@@ -176,6 +176,33 @@ MODEL/Command.cpp.s:
 	$(MAKE) -f CMakeFiles\excellenteam_erez_c_dna_analyzer_omairino.dir\build.make CMakeFiles/excellenteam_erez_c_dna_analyzer_omairino.dir/MODEL/Command.cpp.s
 .PHONY : MODEL/Command.cpp.s
 
+MODEL/CommandParser.obj: MODEL/CommandParser.cpp.obj
+
+.PHONY : MODEL/CommandParser.obj
+
+# target to build an object file
+MODEL/CommandParser.cpp.obj:
+	$(MAKE) -f CMakeFiles\excellenteam_erez_c_dna_analyzer_omairino.dir\build.make CMakeFiles/excellenteam_erez_c_dna_analyzer_omairino.dir/MODEL/CommandParser.cpp.obj
+.PHONY : MODEL/CommandParser.cpp.obj
+
+MODEL/CommandParser.i: MODEL/CommandParser.cpp.i
+
+.PHONY : MODEL/CommandParser.i
+
+# target to preprocess a source file
+MODEL/CommandParser.cpp.i:
+	$(MAKE) -f CMakeFiles\excellenteam_erez_c_dna_analyzer_omairino.dir\build.make CMakeFiles/excellenteam_erez_c_dna_analyzer_omairino.dir/MODEL/CommandParser.cpp.i
+.PHONY : MODEL/CommandParser.cpp.i
+
+MODEL/CommandParser.s: MODEL/CommandParser.cpp.s
+
+.PHONY : MODEL/CommandParser.s
+
+# target to generate assembly for a file
+MODEL/CommandParser.cpp.s:
+	$(MAKE) -f CMakeFiles\excellenteam_erez_c_dna_analyzer_omairino.dir\build.make CMakeFiles/excellenteam_erez_c_dna_analyzer_omairino.dir/MODEL/CommandParser.cpp.s
+.PHONY : MODEL/CommandParser.cpp.s
+
 MODEL/DnaSequence.obj: MODEL/DnaSequence.cpp.obj
 
 .PHONY : MODEL/DnaSequence.obj
@@ -272,6 +299,9 @@ help:
 	@echo ... MODEL/Command.obj
 	@echo ... MODEL/Command.i
 	@echo ... MODEL/Command.s
+	@echo ... MODEL/CommandParser.obj
+	@echo ... MODEL/CommandParser.i
+	@echo ... MODEL/CommandParser.s
 	@echo ... MODEL/DnaSequence.obj
 	@echo ... MODEL/DnaSequence.i
 	@echo ... MODEL/DnaSequence.s

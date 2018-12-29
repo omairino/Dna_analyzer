@@ -12,18 +12,18 @@ class Controller {
 public:
     Controller();
 
-    Controller(const CLI &cli, Command *command);
+    Controller(const CLI &cli, std::tr1::shared_ptr<Command> command);
 
     void start();
 
-    void split(std::string strToSplit, char delimeter);
+    void split(std::string strToSplit);
 
     void print(std::string line);
 
 
 private:
     CLI m_cli;
-    Command *m_command;
+    std::tr1::shared_ptr<Command> m_command;
 };
 
 

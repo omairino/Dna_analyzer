@@ -4,12 +4,16 @@
 CMakeFiles/excellenteam_erez_c_dna_analyzer_omairino.dir/CONTROLLER/Controller.cpp.obj: ../CONTROLLER/Controller.cpp
 CMakeFiles/excellenteam_erez_c_dna_analyzer_omairino.dir/CONTROLLER/Controller.cpp.obj: ../CONTROLLER/Controller.h
 CMakeFiles/excellenteam_erez_c_dna_analyzer_omairino.dir/CONTROLLER/Controller.cpp.obj: ../MODEL/Command.h
+CMakeFiles/excellenteam_erez_c_dna_analyzer_omairino.dir/CONTROLLER/Controller.cpp.obj: ../MODEL/CommandParser.h
 CMakeFiles/excellenteam_erez_c_dna_analyzer_omairino.dir/CONTROLLER/Controller.cpp.obj: ../MODEL/DnaSequence.h
 CMakeFiles/excellenteam_erez_c_dna_analyzer_omairino.dir/CONTROLLER/Controller.cpp.obj: ../VIEW/Cmd.h
 
 CMakeFiles/excellenteam_erez_c_dna_analyzer_omairino.dir/MODEL/Command.cpp.obj: ../MODEL/Command.cpp
 CMakeFiles/excellenteam_erez_c_dna_analyzer_omairino.dir/MODEL/Command.cpp.obj: ../MODEL/Command.h
 CMakeFiles/excellenteam_erez_c_dna_analyzer_omairino.dir/MODEL/Command.cpp.obj: ../MODEL/DnaSequence.h
+
+CMakeFiles/excellenteam_erez_c_dna_analyzer_omairino.dir/MODEL/CommandParser.cpp.obj: ../MODEL/CommandParser.cpp
+CMakeFiles/excellenteam_erez_c_dna_analyzer_omairino.dir/MODEL/CommandParser.cpp.obj: ../MODEL/CommandParser.h
 
 CMakeFiles/excellenteam_erez_c_dna_analyzer_omairino.dir/MODEL/DnaSequence.cpp.obj: ../MODEL/DnaSequence.cpp
 CMakeFiles/excellenteam_erez_c_dna_analyzer_omairino.dir/MODEL/DnaSequence.cpp.obj: ../MODEL/DnaSequence.h
