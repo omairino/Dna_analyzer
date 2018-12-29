@@ -19,20 +19,12 @@ std::string ReadFile::readfile() {
 void WriteFile::writefile() {
     std::ostringstream ss;
     ss<<m_path_write<<".rawdna";
-    FILE *file = fopen (const_cast<char*>((ss.str()).c_str()), "w+");
-    int return_val = fputs (const_cast<char*>(m_sequence.c_str()), file);
-    if (return_val >= 0)
-        printf ("Success");
-    else
-        printf ("failed");
-
-    fclose (file);
-//    std::ofstream myfile((ss.str()).c_str());
-//    if (myfile.is_open()) {
-//        myfile << m_sequence;
-//        std::cout<<ss.str();
-//        myfile.close();
-//    }
+    std::ofstream myfile((ss.str()).c_str(),std::ios::out);
+    if (myfile.is_open()) {
+        myfile << m_sequence;
+        std::cout<<ss.str();
+        myfile.close();
+    }
 }
 
 WriteFile::WriteFile(std::string pathW, std::string sequence) : m_path_write(pathW), m_sequence(sequence) {
