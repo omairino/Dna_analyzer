@@ -6,13 +6,13 @@
 #include <sstream>
 #include "../VIEW/Cmd.h"
 #include "../MODEL/Command.h"
-#include <tr1/memory>
+#include <boost/shared_ptr.hpp>
 
 class Controller {
 public:
     Controller();
 
-    Controller(const CLI &cli, std::tr1::shared_ptr<Command> command);
+    Controller(const CLI &cli, boost::shared_ptr<Command> command);
 
     void start();
 
@@ -23,7 +23,7 @@ public:
 
 private:
     CLI m_cli;
-    std::tr1::shared_ptr<Command> m_command;
+    boost::shared_ptr<Command> m_command;
 };
 
 

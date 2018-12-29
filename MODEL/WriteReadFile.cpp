@@ -1,29 +1,39 @@
 #include "WriteReadFile.h"
 #include <string.h>
 #include <fstream>
+#include <sstream>
 
-void WriteReadFile::readfile() {
+ReadFile::ReadFile(std::string pathR) : m_path_read(pathR) {
+
+}
+
+std::string ReadFile::readfile() {
     std::string line;
-    std::ifstream myfile1(m_path_read);
-    while (getline(myfile1, line)) {
-        m_dna_sequence.push_back(new DnaSequence(line.c_str()));
-    }
+    std::ifstream myfile1(m_path_read.c_str());
+    getline(myfile1, line);
     myfile1.close();
+    return line;
 }
 
-void WriteReadFile::writefile() {
-    std::ofstream myfile(m_path_write);
-    if (myfile.is_open()) {
-        for (std::vector<DnaSequence *>::iterator it = m_dna_sequence.begin(); it != m_dna_sequence.end(); ++it) {
-            myfile << (*it)->getsequence() << std::endl;
-        }
-        myfile.close();
-    }
+
+void WriteFile::writefile() {
+    std::ostringstream ss;
+    ss<<m_path_write<<".rawdna";
+    FILE *file = fopen (const_cast<char*>((ss.str()).c_str()), "w+");
+    int return_val = fputs (const_cast<char*>(m_sequence.c_str()), file);
+    if (return_val >= 0)
+        printf ("Success");
+    else
+        printf ("failed");
+
+    fclose (file);
+//    std::ofstream myfile((ss.str()).c_str());
+//    if (myfile.is_open()) {
+//        myfile << m_sequence;
+//        std::cout<<ss.str();
+//        myfile.close();
+//    }
 }
 
-WriteReadFile::WriteReadFile(char *pathR, char *pathW, std::vector<DnaSequence *> dnaSequence) {
-    m_path_read = pathR;
-    m_path_write = pathW;
-    m_dna_sequence = dnaSequence;
+WriteFile::WriteFile(std::string pathW, std::string sequence) : m_path_write(pathW), m_sequence(sequence) {
 }
-

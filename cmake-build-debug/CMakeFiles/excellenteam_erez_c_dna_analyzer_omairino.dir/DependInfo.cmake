@@ -4,12 +4,12 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "C:/Users/Administrator/Desktop/project DNA/excellenteam-erez-c-dna-analyzer-omairino/CONTROLLER/Controller.cpp" "C:/Users/Administrator/Desktop/project DNA/excellenteam-erez-c-dna-analyzer-omairino/cmake-build-debug/CMakeFiles/excellenteam_erez_c_dna_analyzer_omairino.dir/CONTROLLER/Controller.cpp.obj"
-  "C:/Users/Administrator/Desktop/project DNA/excellenteam-erez-c-dna-analyzer-omairino/MODEL/Command.cpp" "C:/Users/Administrator/Desktop/project DNA/excellenteam-erez-c-dna-analyzer-omairino/cmake-build-debug/CMakeFiles/excellenteam_erez_c_dna_analyzer_omairino.dir/MODEL/Command.cpp.obj"
-  "C:/Users/Administrator/Desktop/project DNA/excellenteam-erez-c-dna-analyzer-omairino/MODEL/CommandParser.cpp" "C:/Users/Administrator/Desktop/project DNA/excellenteam-erez-c-dna-analyzer-omairino/cmake-build-debug/CMakeFiles/excellenteam_erez_c_dna_analyzer_omairino.dir/MODEL/CommandParser.cpp.obj"
-  "C:/Users/Administrator/Desktop/project DNA/excellenteam-erez-c-dna-analyzer-omairino/MODEL/DnaSequence.cpp" "C:/Users/Administrator/Desktop/project DNA/excellenteam-erez-c-dna-analyzer-omairino/cmake-build-debug/CMakeFiles/excellenteam_erez_c_dna_analyzer_omairino.dir/MODEL/DnaSequence.cpp.obj"
-  "C:/Users/Administrator/Desktop/project DNA/excellenteam-erez-c-dna-analyzer-omairino/MODEL/WriteReadFile.cpp" "C:/Users/Administrator/Desktop/project DNA/excellenteam-erez-c-dna-analyzer-omairino/cmake-build-debug/CMakeFiles/excellenteam_erez_c_dna_analyzer_omairino.dir/MODEL/WriteReadFile.cpp.obj"
-  "C:/Users/Administrator/Desktop/project DNA/excellenteam-erez-c-dna-analyzer-omairino/VIEW/Cmd.cpp" "C:/Users/Administrator/Desktop/project DNA/excellenteam-erez-c-dna-analyzer-omairino/cmake-build-debug/CMakeFiles/excellenteam_erez_c_dna_analyzer_omairino.dir/VIEW/Cmd.cpp.obj"
+  "/home/omairino/Desktop/newproject/excellenteam-erez-c-dna-analyzer-omairino/CONTROLLER/Controller.cpp" "/home/omairino/Desktop/newproject/excellenteam-erez-c-dna-analyzer-omairino/cmake-build-debug/CMakeFiles/excellenteam_erez_c_dna_analyzer_omairino.dir/CONTROLLER/Controller.cpp.o"
+  "/home/omairino/Desktop/newproject/excellenteam-erez-c-dna-analyzer-omairino/MODEL/Command.cpp" "/home/omairino/Desktop/newproject/excellenteam-erez-c-dna-analyzer-omairino/cmake-build-debug/CMakeFiles/excellenteam_erez_c_dna_analyzer_omairino.dir/MODEL/Command.cpp.o"
+  "/home/omairino/Desktop/newproject/excellenteam-erez-c-dna-analyzer-omairino/MODEL/CommandParser.cpp" "/home/omairino/Desktop/newproject/excellenteam-erez-c-dna-analyzer-omairino/cmake-build-debug/CMakeFiles/excellenteam_erez_c_dna_analyzer_omairino.dir/MODEL/CommandParser.cpp.o"
+  "/home/omairino/Desktop/newproject/excellenteam-erez-c-dna-analyzer-omairino/MODEL/DnaSequence.cpp" "/home/omairino/Desktop/newproject/excellenteam-erez-c-dna-analyzer-omairino/cmake-build-debug/CMakeFiles/excellenteam_erez_c_dna_analyzer_omairino.dir/MODEL/DnaSequence.cpp.o"
+  "/home/omairino/Desktop/newproject/excellenteam-erez-c-dna-analyzer-omairino/MODEL/WriteReadFile.cpp" "/home/omairino/Desktop/newproject/excellenteam-erez-c-dna-analyzer-omairino/cmake-build-debug/CMakeFiles/excellenteam_erez_c_dna_analyzer_omairino.dir/MODEL/WriteReadFile.cpp.o"
+  "/home/omairino/Desktop/newproject/excellenteam-erez-c-dna-analyzer-omairino/VIEW/Cmd.cpp" "/home/omairino/Desktop/newproject/excellenteam-erez-c-dna-analyzer-omairino/cmake-build-debug/CMakeFiles/excellenteam_erez_c_dna_analyzer_omairino.dir/VIEW/Cmd.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

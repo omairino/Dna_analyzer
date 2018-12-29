@@ -1,3 +1,3 @@
-C:/Users/Administrator/Desktop/project DNA/excellenteam-erez-c-dna-analyzer-omairino/cmake-build-debug/CMakeFiles/excellenteam_erez_c_dna_analyzer_omairino.dir
-C:/Users/Administrator/Desktop/project DNA/excellenteam-erez-c-dna-analyzer-omairino/cmake-build-debug/CMakeFiles/edit_cache.dir
-C:/Users/Administrator/Desktop/project DNA/excellenteam-erez-c-dna-analyzer-omairino/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/omairino/Desktop/newproject/excellenteam-erez-c-dna-analyzer-omairino/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/omairino/Desktop/newproject/excellenteam-erez-c-dna-analyzer-omairino/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/omairino/Desktop/newproject/excellenteam-erez-c-dna-analyzer-omairino/cmake-build-debug/CMakeFiles/excellenteam_erez_c_dna_analyzer_omairino.dir

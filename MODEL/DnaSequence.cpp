@@ -78,9 +78,15 @@ DnaSequence::~DnaSequence() {
 }
 
 DnaSequence &DnaSequence::operator=(const DnaSequence &other) {
-    if (this != &other)
+    if (this != &other && m_length!=0)
     {
         delete[] m_sequence;
+        m_sequence = new Nucleotide[strlen((char *) other.m_sequence) + 1];
+        strcpy((char *) m_sequence, (char* ) other.m_sequence);
+        m_length = other.m_length;
+
+    }else{
+
         m_sequence = new Nucleotide[strlen((char *) other.m_sequence) + 1];
         strcpy((char *) m_sequence, (char* ) other.m_sequence);
         m_length = other.m_length;

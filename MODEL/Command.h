@@ -5,8 +5,9 @@
 
 class Command {
 public:
-    virtual std::string execute()=0;
-    virtual ~Command(){};
+    virtual std::string execute() = 0;
+
+    virtual ~Command() {};
 };
 
 /*---------------CommandSequenceCreation----------------------*/
@@ -16,43 +17,51 @@ public:
     NewCmd(std::string sequence, std::string name);
 
     virtual std::string execute();
-    virtual ~NewCmd(){}
+
+    bool checkSameName();
+
+    virtual ~NewCmd() {}
 
 private:
-    DnaSequence m_sequence;
+    std::string m_sequence;
     std::string m_name;
 };
 
 class Load : public Command {
 public:
-    Load(DnaSequence sequence);
-
+    Load(std::string path ,std::string name);
     virtual std::string execute();
+    bool checkSameName();
 
 private:
-    DnaSequence m_sequence;
+    std::string m_path;
+    std::string m_name;
 };
 
 
 /*---------------CommandSequenceManagement----------------------*/
 
-//
-//class Save : public Command {
-//public:
-//    Save();
-//
-//    virtual std::string execute() {}
-//
-//private:
-//
-//};
-//
+
+class Save : public Command {
+public:
+    Save(std::string name,std::string pathw);
+
+    virtual std::string execute();
+
+private:
+    std::string m_name;
+    std::string m_pathw;
+};
+
 class PrintCmd : public Command {
 public:
-    PrintCmd(){}
+    PrintCmd() {}
+
     virtual std::string execute();
-    ~PrintCmd(){}
+
+    ~PrintCmd() {}
 
 private:
 };
+
 #endif

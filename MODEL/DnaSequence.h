@@ -22,7 +22,9 @@ public:
 
 class DnaSequence {
 public:
-    DnaSequence(){};
+    DnaSequence():m_length(0){
+
+    };
 
     DnaSequence(const char *sequence);
 

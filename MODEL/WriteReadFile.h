@@ -2,21 +2,32 @@
 #define EXCELLENTEAM_EREZ_C_DNA_ANALYZER_OMAIRINO_WRITEREADFILE_H
 
 #include "DnaSequence.h"
-#include <vector>
 
-class WriteReadFile {
+
+class ReadFile {
 public:
-    WriteReadFile(char *pathR, char *pathW, std::vector<DnaSequence *> dnaSequence);
+    ReadFile(std::string pathR);
 
-    void readfile();
+    std::string readfile();
+
+
+private:
+    std::string m_path_read;
+
+
+};
+
+class WriteFile {
+public:
+    WriteFile(std::string pathW, std::string sequence);
 
     void writefile();
 
 private:
-    char *m_path_read;
-    char *m_path_write;
-    std::vector<DnaSequence *> m_dna_sequence;
-};
+    std::string m_path_write;
+    std::string m_sequence;
 
+
+};
 
 #endif //EXCELLENTEAM_EREZ_C_DNA_ANALYZER_OMAIRINO_WRITEREADFILE_H
