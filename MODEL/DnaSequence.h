@@ -2,7 +2,7 @@
 #define EXCELLENTEAM_EREZ_C_DNA_ANALYZER_OMAIRINO_DNASEQUENCE_H
 
 #include <iostream>
-
+#include <vector>
 
 class Nucleotide {
     char m_nucleotide;
@@ -22,6 +22,8 @@ public:
 
 class DnaSequence {
 public:
+    DnaSequence(){};
+
     DnaSequence(const char *sequence);
 
     DnaSequence(const std::string &sequence);
@@ -44,9 +46,10 @@ public:
 
     size_t sequencelength() const;
 
-    char *getsequence();
+    std::string getsequence();
 
     friend std::ostream &operator<<(std::ostream &os, const DnaSequence &ds);
+
 
 private:
     Nucleotide *m_sequence;
@@ -54,5 +57,15 @@ private:
 
 };
 
+static size_t ids = 0;
+struct DNA {
+    size_t id;
+    std::string name;
+    DnaSequence sequence;
+};
+class Data {
+public:
+    static std::vector<DNA> s_sequences;
+};
 
 #endif //EXCELLENTEAM_EREZ_C_DNA_ANALYZER_OMAIRINO_DNASEQUENCE_H

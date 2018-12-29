@@ -66,8 +66,11 @@ DnaSequence::DnaSequence(const std::string &sequence) {
 }
 
 DnaSequence::DnaSequence(const DnaSequence &other) {
-    this->m_sequence = other.m_sequence;
-    this->m_length = other.m_length;
+
+        m_sequence = new Nucleotide[strlen((char *) other.m_sequence) + 1];
+        strcpy((char *) m_sequence, (char* ) other.m_sequence);
+        m_length = other.m_length;
+
 }
 
 DnaSequence::~DnaSequence() {
@@ -75,9 +78,11 @@ DnaSequence::~DnaSequence() {
 }
 
 DnaSequence &DnaSequence::operator=(const DnaSequence &other) {
-    if (this != &other) {
+    if (this != &other)
+    {
         delete[] m_sequence;
-        m_sequence = other.m_sequence;
+        m_sequence = new Nucleotide[strlen((char *) other.m_sequence) + 1];
+        strcpy((char *) m_sequence, (char* ) other.m_sequence);
         m_length = other.m_length;
     }
     return *this;
@@ -90,6 +95,7 @@ DnaSequence &DnaSequence::operator=(const std::string &sequence) {
     for (int i = 0; i < sequence.length(); i++)
         m_sequence[i] = Nucleotide(sequence[i]);
     return *this;
+
 }
 
 DnaSequence &DnaSequence::operator=(const char *sequence) {
@@ -120,8 +126,8 @@ size_t DnaSequence::sequencelength() const {
     return m_length;;
 }
 
-char *DnaSequence::getsequence() {
-    char *s = "";
+std::string DnaSequence::getsequence() {
+    std::string s = "";
     for (int i = 0; i < m_length; i++)
         s += m_sequence[i].getNucleotide();
     return s;
@@ -134,4 +140,4 @@ std::ostream &operator<<(std::ostream &os, const DnaSequence &ds) {
 }
 
 
-
+std::vector<DNA> Data::s_sequences;

@@ -5,7 +5,6 @@
 #include <vector>
 
 class WriteReadFile {
-
 public:
     WriteReadFile(char *pathR, char *pathW, std::vector<DnaSequence *> dnaSequence);
 

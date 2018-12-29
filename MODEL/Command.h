@@ -1,94 +1,58 @@
-//
-// Created by Administrator on 12/26/2018.
-//
-
 #ifndef EXCELLENTEAM_EREZ_C_DNA_ANALYZER_OMAIRINO_COMMAND_H
 #define EXCELLENTEAM_EREZ_C_DNA_ANALYZER_OMAIRINO_COMMAND_H
 
+#include "DnaSequence.h"
 
-class Command
-{
+class Command {
 public:
-    virtual void execute()=0;
+    virtual std::string execute()=0;
+    virtual ~Command(){};
 };
 
-//Dna Sequence
-/*----------------------------*/
-//class Light {
+/*---------------CommandSequenceCreation----------------------*/
+
+class NewCmd : public Command {
+public:
+    NewCmd(std::string sequence, std::string name);
+
+    virtual std::string execute();
+    virtual ~NewCmd(){}
+
+private:
+    DnaSequence m_sequence;
+    std::string m_name;
+};
+
+class Load : public Command {
+public:
+    Load(DnaSequence sequence);
+
+    virtual std::string execute();
+
+private:
+    DnaSequence m_sequence;
+};
+
+
+/*---------------CommandSequenceManagement----------------------*/
+
 //
+//class Save : public Command {
 //public:
-//    Light() {  }
+//    Save();
 //
-//    void turnOn()
-//    {
-//        cout << "The light is on" << endl;
-//    }
+//    virtual std::string execute() {}
 //
-//    void turnOff()
-//    {
-//        cout << "The light is off" << endl;
-//    }
+//private:
+//
 //};
-
-/*----------------------------*/
-
-class FlipUpCommand: public Command
-{
+//
+class PrintCmd : public Command {
 public:
-
-    FlipUpCommand(Light& light):theLight(light)
-    {
-
-    }
-
-    virtual void execute()
-    {
-        theLight.turnOn();
-    }
+    PrintCmd(){}
+    virtual std::string execute();
+    ~PrintCmd(){}
 
 private:
-    Light& theLight;
 };
-
-/*the Command for turning off the light*/
-class FlipDownCommand: public Command
-{
-public:
-    FlipDownCommand(Light& light) :theLight(light)
-    {
-
-    }
-    virtual void execute()
-    {
-        theLight.turnOff();
-    }
-private:
-    Light& theLight;
-};
-
-class Switch {
-public:
-    Switch(Command& flipUpCmd, Command& flipDownCmd)
-            :flipUpCommand(flipUpCmd),flipDownCommand(flipDownCmd)
-    {
-
-    }
-
-    void flipUp()
-    {
-        flipUpCommand.execute();
-    }
-
-    void flipDown()
-    {
-        flipDownCommand.execute();
-    }
-
-private:
-    Command& flipUpCommand;
-    Command& flipDownCommand;
-};
-
-
-
-#endif //EXCELLENTEAM_EREZ_C_DNA_ANALYZER_OMAIRINO_COMMAND_H
+#endif

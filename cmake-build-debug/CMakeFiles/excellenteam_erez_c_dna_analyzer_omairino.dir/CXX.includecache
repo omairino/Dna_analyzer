@@ -1,0 +1,54 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+C:/Users/Administrator/Desktop/project DNA/excellenteam-erez-c-dna-analyzer-omairino/CONTROLLER/Controller.cpp
+Controller.h
+C:/Users/Administrator/Desktop/project DNA/excellenteam-erez-c-dna-analyzer-omairino/CONTROLLER/Controller.h
+
+C:/Users/Administrator/Desktop/project DNA/excellenteam-erez-c-dna-analyzer-omairino/CONTROLLER/Controller.h
+iostream
+-
+vector
+-
+sstream
+-
+../VIEW/Cmd.h
+C:/Users/Administrator/Desktop/project DNA/excellenteam-erez-c-dna-analyzer-omairino/VIEW/Cmd.h
+../MODEL/Command.h
+C:/Users/Administrator/Desktop/project DNA/excellenteam-erez-c-dna-analyzer-omairino/MODEL/Command.h
+tr1/memory
+-
+
+C:/Users/Administrator/Desktop/project DNA/excellenteam-erez-c-dna-analyzer-omairino/MODEL/Command.cpp
+Command.h
+C:/Users/Administrator/Desktop/project DNA/excellenteam-erez-c-dna-analyzer-omairino/MODEL/Command.h
+sstream
+-
+
+C:/Users/Administrator/Desktop/project DNA/excellenteam-erez-c-dna-analyzer-omairino/MODEL/Command.h
+DnaSequence.h
+C:/Users/Administrator/Desktop/project DNA/excellenteam-erez-c-dna-analyzer-omairino/MODEL/DnaSequence.h
+
+C:/Users/Administrator/Desktop/project DNA/excellenteam-erez-c-dna-analyzer-omairino/MODEL/DnaSequence.h
+iostream
+-
+vector
+-
+
+C:/Users/Administrator/Desktop/project DNA/excellenteam-erez-c-dna-analyzer-omairino/VIEW/Cmd.cpp
+Cmd.h
+C:/Users/Administrator/Desktop/project DNA/excellenteam-erez-c-dna-analyzer-omairino/VIEW/Cmd.h
+
+C:/Users/Administrator/Desktop/project DNA/excellenteam-erez-c-dna-analyzer-omairino/VIEW/Cmd.h
+iostream
+-
+vector
+-
+sstream
+-
+

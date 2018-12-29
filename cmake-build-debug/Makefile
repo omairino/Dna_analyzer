@@ -149,33 +149,6 @@ CONTROLLER/Controller.cpp.s:
 	$(MAKE) -f CMakeFiles\excellenteam_erez_c_dna_analyzer_omairino.dir\build.make CMakeFiles/excellenteam_erez_c_dna_analyzer_omairino.dir/CONTROLLER/Controller.cpp.s
 .PHONY : CONTROLLER/Controller.cpp.s
 
-CONTROLLER/main.obj: CONTROLLER/main.cpp.obj
-
-.PHONY : CONTROLLER/main.obj
-
-# target to build an object file
-CONTROLLER/main.cpp.obj:
-	$(MAKE) -f CMakeFiles\excellenteam_erez_c_dna_analyzer_omairino.dir\build.make CMakeFiles/excellenteam_erez_c_dna_analyzer_omairino.dir/CONTROLLER/main.cpp.obj
-.PHONY : CONTROLLER/main.cpp.obj
-
-CONTROLLER/main.i: CONTROLLER/main.cpp.i
-
-.PHONY : CONTROLLER/main.i
-
-# target to preprocess a source file
-CONTROLLER/main.cpp.i:
-	$(MAKE) -f CMakeFiles\excellenteam_erez_c_dna_analyzer_omairino.dir\build.make CMakeFiles/excellenteam_erez_c_dna_analyzer_omairino.dir/CONTROLLER/main.cpp.i
-.PHONY : CONTROLLER/main.cpp.i
-
-CONTROLLER/main.s: CONTROLLER/main.cpp.s
-
-.PHONY : CONTROLLER/main.s
-
-# target to generate assembly for a file
-CONTROLLER/main.cpp.s:
-	$(MAKE) -f CMakeFiles\excellenteam_erez_c_dna_analyzer_omairino.dir\build.make CMakeFiles/excellenteam_erez_c_dna_analyzer_omairino.dir/CONTROLLER/main.cpp.s
-.PHONY : CONTROLLER/main.cpp.s
-
 MODEL/Command.obj: MODEL/Command.cpp.obj
 
 .PHONY : MODEL/Command.obj
@@ -257,32 +230,32 @@ MODEL/WriteReadFile.cpp.s:
 	$(MAKE) -f CMakeFiles\excellenteam_erez_c_dna_analyzer_omairino.dir\build.make CMakeFiles/excellenteam_erez_c_dna_analyzer_omairino.dir/MODEL/WriteReadFile.cpp.s
 .PHONY : MODEL/WriteReadFile.cpp.s
 
-VIEW/CLI.obj: VIEW/CLI.cpp.obj
+VIEW/Cmd.obj: VIEW/Cmd.cpp.obj
 
-.PHONY : VIEW/CLI.obj
+.PHONY : VIEW/Cmd.obj
 
 # target to build an object file
-VIEW/CLI.cpp.obj:
-	$(MAKE) -f CMakeFiles\excellenteam_erez_c_dna_analyzer_omairino.dir\build.make CMakeFiles/excellenteam_erez_c_dna_analyzer_omairino.dir/VIEW/CLI.cpp.obj
-.PHONY : VIEW/CLI.cpp.obj
+VIEW/Cmd.cpp.obj:
+	$(MAKE) -f CMakeFiles\excellenteam_erez_c_dna_analyzer_omairino.dir\build.make CMakeFiles/excellenteam_erez_c_dna_analyzer_omairino.dir/VIEW/Cmd.cpp.obj
+.PHONY : VIEW/Cmd.cpp.obj
 
-VIEW/CLI.i: VIEW/CLI.cpp.i
+VIEW/Cmd.i: VIEW/Cmd.cpp.i
 
-.PHONY : VIEW/CLI.i
+.PHONY : VIEW/Cmd.i
 
 # target to preprocess a source file
-VIEW/CLI.cpp.i:
-	$(MAKE) -f CMakeFiles\excellenteam_erez_c_dna_analyzer_omairino.dir\build.make CMakeFiles/excellenteam_erez_c_dna_analyzer_omairino.dir/VIEW/CLI.cpp.i
-.PHONY : VIEW/CLI.cpp.i
+VIEW/Cmd.cpp.i:
+	$(MAKE) -f CMakeFiles\excellenteam_erez_c_dna_analyzer_omairino.dir\build.make CMakeFiles/excellenteam_erez_c_dna_analyzer_omairino.dir/VIEW/Cmd.cpp.i
+.PHONY : VIEW/Cmd.cpp.i
 
-VIEW/CLI.s: VIEW/CLI.cpp.s
+VIEW/Cmd.s: VIEW/Cmd.cpp.s
 
-.PHONY : VIEW/CLI.s
+.PHONY : VIEW/Cmd.s
 
 # target to generate assembly for a file
-VIEW/CLI.cpp.s:
-	$(MAKE) -f CMakeFiles\excellenteam_erez_c_dna_analyzer_omairino.dir\build.make CMakeFiles/excellenteam_erez_c_dna_analyzer_omairino.dir/VIEW/CLI.cpp.s
-.PHONY : VIEW/CLI.cpp.s
+VIEW/Cmd.cpp.s:
+	$(MAKE) -f CMakeFiles\excellenteam_erez_c_dna_analyzer_omairino.dir\build.make CMakeFiles/excellenteam_erez_c_dna_analyzer_omairino.dir/VIEW/Cmd.cpp.s
+.PHONY : VIEW/Cmd.cpp.s
 
 # Help Target
 help:
@@ -296,9 +269,6 @@ help:
 	@echo ... CONTROLLER/Controller.obj
 	@echo ... CONTROLLER/Controller.i
 	@echo ... CONTROLLER/Controller.s
-	@echo ... CONTROLLER/main.obj
-	@echo ... CONTROLLER/main.i
-	@echo ... CONTROLLER/main.s
 	@echo ... MODEL/Command.obj
 	@echo ... MODEL/Command.i
 	@echo ... MODEL/Command.s
@@ -308,9 +278,9 @@ help:
 	@echo ... MODEL/WriteReadFile.obj
 	@echo ... MODEL/WriteReadFile.i
 	@echo ... MODEL/WriteReadFile.s
-	@echo ... VIEW/CLI.obj
-	@echo ... VIEW/CLI.i
-	@echo ... VIEW/CLI.s
+	@echo ... VIEW/Cmd.obj
+	@echo ... VIEW/Cmd.i
+	@echo ... VIEW/Cmd.s
 .PHONY : help
 
 
