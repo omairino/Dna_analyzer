@@ -102,6 +102,12 @@
 		<Unit filename="/home/omairino/Desktop/newproject/excellenteam-erez-c-dna-analyzer-omairino/MODEL/CommandParser.h">
 			<Option target="excellenteam_erez_c_dna_analyzer_omairino"/>
 		</Unit>
+		<Unit filename="/home/omairino/Desktop/newproject/excellenteam-erez-c-dna-analyzer-omairino/MODEL/CommandRun.cpp">
+			<Option target="excellenteam_erez_c_dna_analyzer_omairino"/>
+		</Unit>
+		<Unit filename="/home/omairino/Desktop/newproject/excellenteam-erez-c-dna-analyzer-omairino/MODEL/CommandRun.h">
+			<Option target="excellenteam_erez_c_dna_analyzer_omairino"/>
+		</Unit>
 		<Unit filename="/home/omairino/Desktop/newproject/excellenteam-erez-c-dna-analyzer-omairino/MODEL/DnaSequence.cpp">
 			<Option target="excellenteam_erez_c_dna_analyzer_omairino"/>
 		</Unit>

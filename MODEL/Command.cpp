@@ -6,18 +6,23 @@
 
 /*---------------CommandSequenceCreation----------------------*/
 
-NewCmd::NewCmd(std::string sequence, std::string name) : m_name(name), m_sequence(sequence) {
+NewCmd::NewCmd(std::vector<std::string> data) : m_sequence(data[1]) {
+    if (data.size() > 2)
+        m_name = data[2];
+    else
+        m_name = "empty";
 
 }
 
-std::string NewCmd::execute() {
-
-    if (m_name == "empty") {
+std::string NewCmd::execute(std::vector<std::string> data) {
+    m_sequence = data[1];
+    if (data.size() < 3) {
         std::ostringstream ss;
         ss << "seq" << (++s_name);
         m_name = ss.str();
     } else {
-        if (Data::checkSameName(m_name)) {
+        m_name = data[2];
+        if (Data::checkSameName(data[2])) {
             return "enter another name\n";
         }
     }
@@ -33,25 +38,34 @@ std::string NewCmd::execute() {
 }
 
 
-std::string PrintCmd::execute() {
+std::string PrintCmd::execute(std::vector<std::string> data) {
+    m_key = data[1];
+    std::ostringstream ss;
     std::vector<std::string> keys;
     keys = Data::getAllKeysForValue(Data::s_sequence, Data::s_sequence.find(m_key)->second);
-    std::cout << "[" << keys[0] << "] " << keys[1] << ": "
-              << Data::s_sequence.find(m_key)->second->getsequence() << std::endl;
+    ss << "[" << keys[0] << "] " << keys[1] << ": "
+       << Data::s_sequence.find(m_key)->second->getsequence() << std::endl;
+    return ss.str();
 
 }
 
 
-Load::Load(std::string path, std::string name) : m_path(path), m_name(name) {
+Load::Load(std::vector<std::string> data) : m_path(data[1]) {
+    if (data.size() > 2)
+        m_name = data[2];
+    else
+        m_name = "empty";
 
 }
 
-std::string Load::execute() {
-    if (m_name == "empty") {
+std::string Load::execute(std::vector<std::string> data) {
+    m_path = data[1];
+    if (data.size() < 3) {
         std::ostringstream ss;
         ss << "seq" << (++s_name);
         m_name = ss.str();
     } else {
+        m_name = data[2];
         if (Data::checkSameName(m_name)) {
             return "enter another name\n";
         }
@@ -75,12 +89,21 @@ std::string Load::execute() {
 }
 
 
-Save::Save(std::string name, std::string pathw) : m_pathw(pathw), m_name(name) {
+Save::Save(std::vector<std::string> data) : m_pathw(data[1]) {
+    if (data.size() > 2)
+        m_name = data[2];
+    else
+        m_name = data[1];
 
 }
 
-std::string Save::execute() {
+std::string Save::execute(std::vector<std::string> data) {
     std::string m_sequence;
+    m_pathw = data[1];
+    if (data.size() > 2)
+        m_name = data[2];
+    else
+        m_name = data[1];
     if (Data::s_sequence.find(m_name) == Data::s_sequence.end()) {
         return "id or name not exists\n";
     }

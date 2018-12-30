@@ -7,12 +7,13 @@
 #include "../VIEW/Cmd.h"
 #include "../MODEL/Command.h"
 #include <boost/shared_ptr.hpp>
+#include "../MODEL/CommandRun.h"
 
 class Controller {
 public:
     Controller();
 
-    Controller(const CLI &cli, boost::shared_ptr<Command> command);
+    Controller(const CLI &cli,CommandRun &command);
 
     void start();
 
@@ -23,7 +24,8 @@ public:
 
 private:
     CLI m_cli;
-    boost::shared_ptr<Command> m_command;
+//    boost::shared_ptr<Command> m_command;
+    CommandRun m_command;
 };
 
 

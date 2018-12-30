@@ -5,7 +5,7 @@
 
 class Command {
 public:
-    virtual std::string execute() = 0;
+    virtual std::string execute(std::vector<std::string> data) = 0;
 
     virtual ~Command() {};
 };
@@ -14,9 +14,10 @@ public:
 
 class NewCmd : public Command {
 public:
-    NewCmd(std::string sequence, std::string name);
+    NewCmd(){}
+    NewCmd(std::vector<std::string> data);
 
-    virtual std::string execute();
+    virtual std::string execute(std::vector<std::string> data);
 
 
 
@@ -29,8 +30,9 @@ private:
 
 class Load : public Command {
 public:
-    Load(std::string path ,std::string name);
-    virtual std::string execute();
+    Load(){}
+    Load(std::vector<std::string> data);
+    virtual std::string execute(std::vector<std::string> data);
 
 
 private:
@@ -44,9 +46,10 @@ private:
 
 class Save : public Command {
 public:
-    Save(std::string name,std::string pathw);
+    Save(){}
+    Save(std::vector<std::string> data);
 
-    virtual std::string execute();
+    virtual std::string execute(std::vector<std::string> data);
 
 private:
     std::string m_name;
@@ -55,14 +58,16 @@ private:
 
 class PrintCmd : public Command {
 public:
-    PrintCmd(std::string key):m_key(key){}
+    PrintCmd(){}
+    PrintCmd(std::vector<std::string> data):m_key(data[1]){}
 
-    virtual std::string execute();
+    virtual std::string execute(std::vector<std::string> data);
 
     ~PrintCmd() {}
 
 private:
     std::string m_key;
 };
+
 
 #endif
