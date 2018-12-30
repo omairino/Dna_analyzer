@@ -11,12 +11,15 @@ void Controller::split(std::string strToSplit) {
     std::vector<std::string> splittedStrings;
     CommandParser::parser(strToSplit, &splittedStrings);
     std::string line;
-
-    if (splittedStrings[0] != "exit") {
-        line = m_command.s_commad.find(splittedStrings[0])->second->execute(splittedStrings);
-        print(line);
+    if (splittedStrings.size() > 0) {
+        if (Data::s_sequence.find(splittedStrings[0]) != Data::s_sequence.end()) {
+            if (splittedStrings[0] != "exit") {
+                line = m_command.s_commad.find(splittedStrings[0])->second->execute(splittedStrings);
+                print(line);
+                start();
+            }
+        }}
         start();
-    }
 
 }
 

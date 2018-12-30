@@ -6,21 +6,41 @@
 
 #IncludeRegexTransform: 
 
-/home/omairino/Desktop/newproject/excellenteam-erez-c-dna-analyzer-omairino/MODEL/Command.cpp
-Command.h
-/home/omairino/Desktop/newproject/excellenteam-erez-c-dna-analyzer-omairino/MODEL/Command.h
+/home/omairino/Desktop/newproject/excellenteam-erez-c-dna-analyzer-omairino/CONTROLLER/Controller.cpp
+Controller.h
+/home/omairino/Desktop/newproject/excellenteam-erez-c-dna-analyzer-omairino/CONTROLLER/Controller.h
+../MODEL/CommandParser.h
+/home/omairino/Desktop/newproject/excellenteam-erez-c-dna-analyzer-omairino/MODEL/CommandParser.h
+
+/home/omairino/Desktop/newproject/excellenteam-erez-c-dna-analyzer-omairino/CONTROLLER/Controller.h
+iostream
+-
+vector
+-
 sstream
 -
+../VIEW/Cmd.h
+/home/omairino/Desktop/newproject/excellenteam-erez-c-dna-analyzer-omairino/VIEW/Cmd.h
+../MODEL/Command.h
+/home/omairino/Desktop/newproject/excellenteam-erez-c-dna-analyzer-omairino/MODEL/Command.h
 boost/shared_ptr.hpp
 -
-iterator
--
-WriteReadFile.h
-/home/omairino/Desktop/newproject/excellenteam-erez-c-dna-analyzer-omairino/MODEL/WriteReadFile.h
+../MODEL/CommandRun.h
+/home/omairino/Desktop/newproject/excellenteam-erez-c-dna-analyzer-omairino/MODEL/CommandRun.h
 
 /home/omairino/Desktop/newproject/excellenteam-erez-c-dna-analyzer-omairino/MODEL/Command.h
 DnaSequence.h
 /home/omairino/Desktop/newproject/excellenteam-erez-c-dna-analyzer-omairino/MODEL/DnaSequence.h
+
+/home/omairino/Desktop/newproject/excellenteam-erez-c-dna-analyzer-omairino/MODEL/CommandParser.h
+vector
+-
+string
+-
+
+/home/omairino/Desktop/newproject/excellenteam-erez-c-dna-analyzer-omairino/MODEL/CommandRun.h
+Command.h
+/home/omairino/Desktop/newproject/excellenteam-erez-c-dna-analyzer-omairino/MODEL/Command.h
 
 /home/omairino/Desktop/newproject/excellenteam-erez-c-dna-analyzer-omairino/MODEL/DnaSequence.h
 iostream
@@ -32,7 +52,11 @@ map
 boost/shared_ptr.hpp
 -
 
-/home/omairino/Desktop/newproject/excellenteam-erez-c-dna-analyzer-omairino/MODEL/WriteReadFile.h
-DnaSequence.h
-/home/omairino/Desktop/newproject/excellenteam-erez-c-dna-analyzer-omairino/MODEL/DnaSequence.h
+/home/omairino/Desktop/newproject/excellenteam-erez-c-dna-analyzer-omairino/VIEW/Cmd.h
+iostream
+-
+vector
+-
+sstream
+-
 
