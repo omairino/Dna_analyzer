@@ -11,6 +11,10 @@ iostream
 -
 vector
 -
+map
+-
+boost/shared_ptr.hpp
+-
 
 /home/omairino/Desktop/newproject/excellenteam-erez-c-dna-analyzer-omairino/MODEL/WriteReadFile.cpp
 WriteReadFile.h

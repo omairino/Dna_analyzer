@@ -18,7 +18,7 @@ public:
 
     virtual std::string execute();
 
-    bool checkSameName();
+
 
     virtual ~NewCmd() {}
 
@@ -31,7 +31,7 @@ class Load : public Command {
 public:
     Load(std::string path ,std::string name);
     virtual std::string execute();
-    bool checkSameName();
+
 
 private:
     std::string m_path;
@@ -55,13 +55,14 @@ private:
 
 class PrintCmd : public Command {
 public:
-    PrintCmd() {}
+    PrintCmd(std::string key):m_key(key){}
 
     virtual std::string execute();
 
     ~PrintCmd() {}
 
 private:
+    std::string m_key;
 };
 
 #endif

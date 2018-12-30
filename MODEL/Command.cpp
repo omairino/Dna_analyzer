@@ -1,5 +1,7 @@
 #include "Command.h"
 #include <sstream>
+#include <boost/shared_ptr.hpp>
+#include <iterator>
 #include "WriteReadFile.h"
 
 /*---------------CommandSequenceCreation----------------------*/
@@ -15,38 +17,30 @@ std::string NewCmd::execute() {
         ss << "seq" << (++s_name);
         m_name = ss.str();
     } else {
-        if (checkSameName()) {
+        if (Data::checkSameName(m_name)) {
             return "enter another name\n";
         }
     }
-    DNA newseq;
     std::ostringstream line;
-    DnaSequence dna(m_sequence);
-    newseq.id = ++s_id;
-    newseq.name = m_name;
-    newseq.sequence = dna;
-    Data::s_sequences.push_back(newseq);
-    line << '[' << newseq.id << ']' << " " << newseq.name << ": " << m_sequence << "\n";
+    std::ostringstream ss;
+    ss << ++s_id;
+    boost::shared_ptr<DnaSequence> dna = boost::shared_ptr<DnaSequence>(new DnaSequence(m_sequence));
+    Data::s_sequence[ss.str()] = dna;
+    Data::s_sequence[m_name] = dna;
+    line << '[' << s_id << ']' << " " << m_name << ": " << m_sequence << "\n";
 
     return line.str();
 }
 
-bool NewCmd::checkSameName() {
-    for (int i = 0; i < Data::s_sequences.size(); i++) {
-        if (Data::s_sequences[i].name == m_name)
-            return true;
-    }
-    return false;
-}
-
 
 std::string PrintCmd::execute() {
-    for (int i = 0; i < Data::s_sequences.size(); i++) {
-        std::cout << "[" << Data::s_sequences[i].id << "] " << Data::s_sequences[i].sequence << " "
-                  << Data::s_sequences[i].name << std::endl;
-    }
-    return "";
+    std::vector<std::string> keys;
+    keys = Data::getAllKeysForValue(Data::s_sequence, Data::s_sequence.find(m_key)->second);
+    std::cout << "[" << keys[0] << "] " << keys[1] << ": "
+              << Data::s_sequence.find(m_key)->second->getsequence() << std::endl;
+
 }
+
 
 Load::Load(std::string path, std::string name) : m_path(path), m_name(name) {
 
@@ -58,7 +52,7 @@ std::string Load::execute() {
         ss << "seq" << (++s_name);
         m_name = ss.str();
     } else {
-        if (checkSameName()) {
+        if (Data::checkSameName(m_name)) {
             return "enter another name\n";
         }
     }
@@ -66,41 +60,25 @@ std::string Load::execute() {
     std::ostringstream line;
     ReadFile read(m_path);
     sequence = read.readfile();
-    DnaSequence dna(sequence);
-    DNA data;
-    data.id = ++s_id;
-    data.name = m_name;
-    data.sequence = dna;
-    Data::s_sequences.push_back(data);
 
-    line << '[' << data.id << ']' << " " << data.name << ": " << sequence << "\n";
+    std::ostringstream ss;
+    ss << ++s_id;
+    boost::shared_ptr<DnaSequence> dna = boost::shared_ptr<DnaSequence>(new DnaSequence(sequence));
+    Data::s_sequence[ss.str()] = dna;
+    Data::s_sequence[m_name] = dna;
+    line << '[' << s_id << ']' << " " << m_name << ": " << sequence << "\n";
+
     return line.str();
 }
 
-bool Load::checkSameName() {
 
-    for (int i = 0; i < Data::s_sequences.size(); i++) {
-        if (Data::s_sequences[i].name == m_name)
-            return true;
-    }
-    return false;
-
-}
-
-
-
-Save::Save(std::string name,std::string pathw ):m_pathw(pathw) ,m_name(name){
+Save::Save(std::string name, std::string pathw) : m_pathw(pathw), m_name(name) {
 
 }
 
 std::string Save::execute() {
     std::string m_sequence;
-    for(int i=0;i<Data::s_sequences.size();i++){
-        if(Data::s_sequences[i].name == m_name){
-            m_sequence = Data::s_sequences[i].sequence.getsequence();
-            break;
-        }
-    }
-    WriteFile write(m_pathw,m_sequence);
+    m_sequence = Data::s_sequence.find(m_name)->second->getsequence();
+    WriteFile write(m_pathw, m_sequence);
     write.writefile();
 }

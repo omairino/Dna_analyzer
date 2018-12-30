@@ -3,6 +3,8 @@
 
 #include <iostream>
 #include <vector>
+#include <map>
+#include <boost/shared_ptr.hpp>
 
 class Nucleotide {
     char m_nucleotide;
@@ -22,7 +24,7 @@ public:
 
 class DnaSequence {
 public:
-    DnaSequence():m_length(0){
+    DnaSequence() : m_length(0) {
 
     };
 
@@ -66,9 +68,39 @@ struct DNA {
     std::string name;
     DnaSequence sequence;
 };
+
 class Data {
 public:
     static std::vector<DNA> s_sequences;
+    static std::map<std::string, boost::shared_ptr<DnaSequence> > s_sequence;
+    static std::vector<std::string> getAllKeysForValue(std::map<std::string, boost::shared_ptr<DnaSequence> > mapOfWords,
+                                 boost::shared_ptr<DnaSequence> value) {
+
+        std::vector<std::string> key;
+        std::map<std::string, boost::shared_ptr<DnaSequence> >::iterator it = mapOfWords.begin();
+        // Iterate through the map
+        while(it != mapOfWords.end())
+        {
+            // Check if value of this entry matches with given value
+            if(it->second == value)
+            {
+                // Push the key in given map
+                key.push_back(it->first);
+            }
+            // Go to next entry in map
+            it++;
+        }
+        return key;
+    }
+
+
+    static bool checkSameName(std::string m_name) {
+        if (Data::s_sequence.find(m_name) != Data::s_sequence.end()) {
+            return true;
+        }
+
+        return false;
+    }
 };
 
 #endif //EXCELLENTEAM_EREZ_C_DNA_ANALYZER_OMAIRINO_DNASEQUENCE_H

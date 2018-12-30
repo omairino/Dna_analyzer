@@ -23,8 +23,9 @@ void Controller::split(std::string strToSplit) {
                 print(line);
             }
 
-    if (splittedStrings[0] == "print") {
-        m_command = boost::shared_ptr<Command>(new PrintCmd());
+    if (splittedStrings[0] == "print")
+        if (splittedStrings.size() > 1){
+        m_command = boost::shared_ptr<Command>(new PrintCmd(splittedStrings[1]));
         m_command->execute();
     }
 
