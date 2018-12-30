@@ -14,11 +14,11 @@ public:
 
 class NewCmd : public Command {
 public:
-    NewCmd(){}
+    NewCmd() {}
+
     NewCmd(std::vector<std::string> data);
 
     virtual std::string execute(std::vector<std::string> data);
-
 
 
     virtual ~NewCmd() {}
@@ -30,8 +30,10 @@ private:
 
 class Load : public Command {
 public:
-    Load(){}
+    Load() {}
+
     Load(std::vector<std::string> data);
+
     virtual std::string execute(std::vector<std::string> data);
 
 
@@ -46,7 +48,8 @@ private:
 
 class Save : public Command {
 public:
-    Save(){}
+    Save() {}
+
     Save(std::vector<std::string> data);
 
     virtual std::string execute(std::vector<std::string> data);
@@ -58,8 +61,9 @@ private:
 
 class PrintCmd : public Command {
 public:
-    PrintCmd(){}
-    PrintCmd(std::vector<std::string> data):m_key(data[1]){}
+    PrintCmd() {}
+
+    PrintCmd(std::vector<std::string> data) : m_key(data[1]) {}
 
     virtual std::string execute(std::vector<std::string> data);
 
@@ -69,5 +73,15 @@ private:
     std::string m_key;
 };
 
+
+class List : public Command {
+public:
+    List() {}
+
+    virtual std::string execute(std::vector<std::string> data);
+
+    ~List() {}
+
+};
 
 #endif

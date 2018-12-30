@@ -72,11 +72,13 @@ struct DNA {
 class Data {
 public:
     static std::vector<DNA> s_sequences;
-    static std::map<std::string, boost::shared_ptr<DnaSequence> > s_sequence;
-    static std::vector<std::string> getAllKeysForValue(std::map<std::string, boost::shared_ptr<DnaSequence> > mapOfWords,
+    static std::map<std::string, boost::shared_ptr<DnaSequence> > s_sequencekey;
+    static std::map<std::string, boost::shared_ptr<DnaSequence> > s_sequencename;
+
+    static std::string getAllKeysForValue(std::map<std::string, boost::shared_ptr<DnaSequence> > mapOfWords,
                                  boost::shared_ptr<DnaSequence> value) {
 
-        std::vector<std::string> key;
+
         std::map<std::string, boost::shared_ptr<DnaSequence> >::iterator it = mapOfWords.begin();
         // Iterate through the map
         while(it != mapOfWords.end())
@@ -85,17 +87,17 @@ public:
             if(it->second == value)
             {
                 // Push the key in given map
-                key.push_back(it->first);
+                return  it->first;
             }
             // Go to next entry in map
             it++;
         }
-        return key;
+        return "";
     }
 
 
     static bool checkSameName(std::string m_name) {
-        if (Data::s_sequence.find(m_name) != Data::s_sequence.end()) {
+        if (Data::s_sequencename.find(m_name) != Data::s_sequencename.end()) {
             return true;
         }
 

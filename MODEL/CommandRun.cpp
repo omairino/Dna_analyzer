@@ -5,5 +5,6 @@ void CommandRun::start() {
     s_commad["load"] = boost::shared_ptr<Command>(new Load());
     s_commad["save"] = boost::shared_ptr<Command>(new Save());
     s_commad["print"] = boost::shared_ptr<Command>(new PrintCmd());
+    s_commad["list"] = boost::shared_ptr<Command>(new List());
 }
 
