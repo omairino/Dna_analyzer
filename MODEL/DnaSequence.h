@@ -63,31 +63,25 @@ private:
 
 static size_t s_id = 0;
 static size_t s_name = 0;
-struct DNA {
-    size_t id;
-    std::string name;
-    DnaSequence sequence;
-};
+
 
 class Data {
 public:
-    static std::vector<DNA> s_sequences;
+
     static std::map<std::string, boost::shared_ptr<DnaSequence> > s_sequencekey;
     static std::map<std::string, boost::shared_ptr<DnaSequence> > s_sequencename;
 
     static std::string getAllKeysForValue(std::map<std::string, boost::shared_ptr<DnaSequence> > mapOfWords,
-                                 boost::shared_ptr<DnaSequence> value) {
+                                          boost::shared_ptr<DnaSequence> value) {
 
 
         std::map<std::string, boost::shared_ptr<DnaSequence> >::iterator it = mapOfWords.begin();
         // Iterate through the map
-        while(it != mapOfWords.end())
-        {
+        while (it != mapOfWords.end()) {
             // Check if value of this entry matches with given value
-            if(it->second == value)
-            {
+            if (it->second == value) {
                 // Push the key in given map
-                return  it->first;
+                return it->first;
             }
             // Go to next entry in map
             it++;
