@@ -58,17 +58,20 @@ std::string Load::execute() {
     }
     std::string sequence;
     std::ostringstream line;
+
     ReadFile read(m_path);
     sequence = read.readfile();
 
-    std::ostringstream ss;
-    ss << ++s_id;
-    boost::shared_ptr<DnaSequence> dna = boost::shared_ptr<DnaSequence>(new DnaSequence(sequence));
-    Data::s_sequence[ss.str()] = dna;
-    Data::s_sequence[m_name] = dna;
-    line << '[' << s_id << ']' << " " << m_name << ": " << sequence << "\n";
-
-    return line.str();
+    if (sequence != "") {
+        std::ostringstream ss;
+        ss << ++s_id;
+        boost::shared_ptr<DnaSequence> dna = boost::shared_ptr<DnaSequence>(new DnaSequence(sequence));
+        Data::s_sequence[ss.str()] = dna;
+        Data::s_sequence[m_name] = dna;
+        line << '[' << s_id << ']' << " " << m_name << ": " << sequence << "\n";
+        return line.str();
+    }
+    return "file is empty or not exists\n";
 }
 
 
@@ -78,7 +81,11 @@ Save::Save(std::string name, std::string pathw) : m_pathw(pathw), m_name(name) {
 
 std::string Save::execute() {
     std::string m_sequence;
+    if (Data::s_sequence.find(m_name) == Data::s_sequence.end()) {
+        return "id or name not exists\n";
+    }
     m_sequence = Data::s_sequence.find(m_name)->second->getsequence();
     WriteFile write(m_pathw, m_sequence);
     write.writefile();
+    return "save success!!\n";
 }

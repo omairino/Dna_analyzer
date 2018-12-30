@@ -6,6 +6,22 @@
 
 #IncludeRegexTransform: 
 
+/home/omairino/Desktop/newproject/excellenteam-erez-c-dna-analyzer-omairino/MODEL/Command.cpp
+Command.h
+/home/omairino/Desktop/newproject/excellenteam-erez-c-dna-analyzer-omairino/MODEL/Command.h
+sstream
+-
+boost/shared_ptr.hpp
+-
+iterator
+-
+WriteReadFile.h
+/home/omairino/Desktop/newproject/excellenteam-erez-c-dna-analyzer-omairino/MODEL/WriteReadFile.h
+
+/home/omairino/Desktop/newproject/excellenteam-erez-c-dna-analyzer-omairino/MODEL/Command.h
+DnaSequence.h
+/home/omairino/Desktop/newproject/excellenteam-erez-c-dna-analyzer-omairino/MODEL/DnaSequence.h
+
 /home/omairino/Desktop/newproject/excellenteam-erez-c-dna-analyzer-omairino/MODEL/DnaSequence.h
 iostream
 -
@@ -14,16 +30,6 @@ vector
 map
 -
 boost/shared_ptr.hpp
--
-
-/home/omairino/Desktop/newproject/excellenteam-erez-c-dna-analyzer-omairino/MODEL/WriteReadFile.cpp
-WriteReadFile.h
-/home/omairino/Desktop/newproject/excellenteam-erez-c-dna-analyzer-omairino/MODEL/WriteReadFile.h
-string.h
--
-fstream
--
-sstream
 -
 
 /home/omairino/Desktop/newproject/excellenteam-erez-c-dna-analyzer-omairino/MODEL/WriteReadFile.h
