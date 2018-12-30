@@ -73,17 +73,11 @@ public:
 
     static std::string getAllKeysForValue(std::map<std::string, boost::shared_ptr<DnaSequence> > mapOfWords,
                                           boost::shared_ptr<DnaSequence> value) {
-
-
         std::map<std::string, boost::shared_ptr<DnaSequence> >::iterator it = mapOfWords.begin();
-        // Iterate through the map
         while (it != mapOfWords.end()) {
-            // Check if value of this entry matches with given value
             if (it->second == value) {
-                // Push the key in given map
                 return it->first;
             }
-            // Go to next entry in map
             it++;
         }
         return "";
