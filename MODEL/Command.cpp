@@ -146,18 +146,23 @@ std::string List::execute(std::vector<std::string> data) {
 size_t Pair::m_id = 0;
 
 std::string Pair::execute(std::vector<std::string> data) {
+    std::string key;
+    std::ostringstream ss;
+    std::ostringstream lins;
     if (data.size() < 2)
         return "id or name is invalid";
 
-    if (data.size() == 4) {
+    if (data.size() == 2) {
         if (data[1][0] == '#') {
             std::string k = data[1];
             k.erase(0, 1);
             m_name = Data::getAllKeysForValue(Data::s_sequencename, Data::s_sequencekey.find(k)->second);
             m_sequence = Data::s_sequencekey.find(k)->second->getsequence();
+            key = k;
         } else {
             m_sequence = Data::s_sequencename.find(data[1])->second->getsequence();
             m_name = data[1];
+            key =  Data::getAllKeysForValue(Data::s_sequencekey, Data::s_sequencename.find(m_name)->second);
         }
     }
     if (m_sequence.length() == 0) {
@@ -187,11 +192,12 @@ std::string Pair::execute(std::vector<std::string> data) {
             m_name.erase(0, 1);
         }
     } else {
-        line << "seq" << ++s_name;
-        m_name = line.str();
+        boost::shared_ptr<DnaSequence> dna = boost::shared_ptr<DnaSequence>(new DnaSequence(m_sequence));
+        Data::s_sequencekey[key] = dna;
+        Data::s_sequencename[m_name] = dna;
+        lins << '[' << key << ']' << " " << m_name << ": " << m_sequence << "\n";
+        return lins.str();
     }
-    std::ostringstream ss;
-    std::ostringstream lins;
 
     ss << ++s_id;
     boost::shared_ptr<DnaSequence> dna = boost::shared_ptr<DnaSequence>(new DnaSequence(m_sequence));
@@ -206,6 +212,9 @@ std::string Pair::execute(std::vector<std::string> data) {
 size_t Slice::m_id = 0;
 
 std::string Slice::execute(std::vector<std::string> data) {
+    std::ostringstream ss;
+    std::ostringstream lins;
+    std::string key;
     if (data.size() < 4)
         return "id or name is invalid\n";
 
@@ -215,9 +224,11 @@ std::string Slice::execute(std::vector<std::string> data) {
             k.erase(0, 1);
             m_name = Data::getAllKeysForValue(Data::s_sequencename, Data::s_sequencekey.find(k)->second);
             m_sequence = Data::s_sequencekey.find(k)->second->getsequence();
+            key = k;
         } else {
             m_sequence = Data::s_sequencename.find(data[1])->second->getsequence();
             m_name = data[1];
+            key = Data::getAllKeysForValue(Data::s_sequencekey, Data::s_sequencename.find(m_name)->second);
         }
     }
     size_t from = 0, to = 0;
@@ -239,12 +250,14 @@ std::string Slice::execute(std::vector<std::string> data) {
             m_name.erase(0, 1);
         }
 
-    } else {
-        line << "seq" << ++s_name;
-        m_name = line.str();
+    } else  {
+        boost::shared_ptr<DnaSequence> dna = boost::shared_ptr<DnaSequence>(new DnaSequence(m_sequence));
+        Data::s_sequencekey[key] = dna;
+        Data::s_sequencename[m_name] = dna;
+        lins << '[' << key << ']' << " " << m_name << ": " << m_sequence << "\n";
+        return lins.str();
     }
-    std::ostringstream ss;
-    std::ostringstream lins;
+
 
     ss << ++s_id;
     boost::shared_ptr<DnaSequence> dna = boost::shared_ptr<DnaSequence>(new DnaSequence(m_sequence));

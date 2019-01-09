@@ -14,7 +14,7 @@ void Controller::run(std::string strToSplit) {
     if (splittedStrings.size() > 0) {
         if (m_command.s_commad.find(splittedStrings[0]) != m_command.s_commad.end()) {
             line = m_command.s_commad.find(splittedStrings[0])->second->execute(splittedStrings);
-            print(line);
+            m_cli.print(line);
         }
         if (splittedStrings[0] == "exit") {
             exit(0);
@@ -31,9 +31,6 @@ void Controller::start() {
     run(m_cli.start());
 }
 
-void Controller::print(std::string line) {
-    m_cli.print(line);
-}
 
 
 int main() {
