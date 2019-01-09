@@ -12,5 +12,7 @@ void CommandRun::start() {
     s_commad["rename"] = boost::shared_ptr<Command>(new Rename());
     s_commad["del"] = boost::shared_ptr<Command>(new Delete());
     s_commad["replace"] = boost::shared_ptr<Command>(new Replace());
+    s_commad["concat"] = boost::shared_ptr<Command>(new Concat());
+
 }
 

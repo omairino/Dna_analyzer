@@ -154,6 +154,23 @@ private:
 };
 
 
+class Concat: public Command {
+public:
+    Concat(){
+
+    }
+    virtual std::string execute(std::vector<std::string> data);
+
+    virtual ~Concat() {};
+    static size_t m_id;
+private:
+
+    std::string m_name;
+    std::string m_sequence;
+
+};
+
+
 /*------------------------------------- End Sequence Manipulation!!--------------------------------*/
 /*-------------------------------------------Sequence Management--------------------------------*/
 
