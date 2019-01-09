@@ -102,6 +102,8 @@ public:
 };
 
 
+/*------------------------------------- Sequence Manipulation--------------------------------*/
+
 class Pair: public Command {
 public:
     Pair(){
@@ -135,4 +137,32 @@ private:
 
 };
 
+
+/*------------------------------------- End Sequence Manipulation!!--------------------------------*/
+/*-------------------------------------------Sequence Management--------------------------------*/
+
+class Rename: public Command {
+public:
+    Rename(){}
+    virtual std::string execute(std::vector<std::string> data);
+
+    virtual ~Rename() {};
+    static size_t m_id;
+private:
+
+    std::string m_name;
+
+};
+
+class Delete: public Command {
+public:
+    Delete(){}
+    virtual std::string execute(std::vector<std::string> data);
+
+    virtual ~Delete() {};
+    static size_t m_id;
+
+};
+
+/*----------------------------------------End Sequence Management!!--------------------------------*/
 #endif

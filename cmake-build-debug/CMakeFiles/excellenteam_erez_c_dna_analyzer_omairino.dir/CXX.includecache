@@ -6,21 +6,17 @@
 
 #IncludeRegexTransform: 
 
-/home/omairino/Desktop/newproject/excellenteam-erez-c-dna-analyzer-omairino/MODEL/Command.cpp
-Command.h
-/home/omairino/Desktop/newproject/excellenteam-erez-c-dna-analyzer-omairino/MODEL/Command.h
-sstream
--
-boost/shared_ptr.hpp
--
-iterator
--
-WriteReadFile.h
-/home/omairino/Desktop/newproject/excellenteam-erez-c-dna-analyzer-omairino/MODEL/WriteReadFile.h
-
 /home/omairino/Desktop/newproject/excellenteam-erez-c-dna-analyzer-omairino/MODEL/Command.h
 DnaSequence.h
 /home/omairino/Desktop/newproject/excellenteam-erez-c-dna-analyzer-omairino/MODEL/DnaSequence.h
+
+/home/omairino/Desktop/newproject/excellenteam-erez-c-dna-analyzer-omairino/MODEL/CommandRun.cpp
+CommandRun.h
+/home/omairino/Desktop/newproject/excellenteam-erez-c-dna-analyzer-omairino/MODEL/CommandRun.h
+
+/home/omairino/Desktop/newproject/excellenteam-erez-c-dna-analyzer-omairino/MODEL/CommandRun.h
+Command.h
+/home/omairino/Desktop/newproject/excellenteam-erez-c-dna-analyzer-omairino/MODEL/Command.h
 
 /home/omairino/Desktop/newproject/excellenteam-erez-c-dna-analyzer-omairino/MODEL/DnaSequence.h
 iostream
@@ -31,8 +27,4 @@ map
 -
 boost/shared_ptr.hpp
 -
-
-/home/omairino/Desktop/newproject/excellenteam-erez-c-dna-analyzer-omairino/MODEL/WriteReadFile.h
-DnaSequence.h
-/home/omairino/Desktop/newproject/excellenteam-erez-c-dna-analyzer-omairino/MODEL/DnaSequence.h
 

@@ -190,6 +190,8 @@ std::string List::execute(std::vector<std::string> data) {
     return line.str();
 }
 
+
+/*------------------------------------- Sequence Manipulation--------------------------------*/
 size_t Pair::m_id = 0;
 
 std::string Pair::execute(std::vector<std::string> data) {
@@ -314,3 +316,62 @@ std::string Slice::execute(std::vector<std::string> data) {
     return lins.str();
 }
 
+/*------------------------------------- End Sequence Manipulation!!--------------------------------*/
+
+/*-------------------------------------------Sequence Management--------------------------------*/
+
+std::string Rename::execute(std::vector<std::string> data) {
+    std::string key;
+    std::string newName;
+    boost::shared_ptr<DnaSequence> dna;
+    if (data.size() == 3) {
+        if (data[1][0] == '#') {
+            std::string k = data[1];
+            k.erase(0, 1);
+            m_name = Data::getAllKeysForValue(Data::s_sequencename, Data::s_sequencekey.find(k)->second);
+            dna = Data::s_sequencekey.find(k)->second;
+        } else {
+            dna = Data::s_sequencename.find(data[1])->second;
+            m_name = data[1];
+        }
+
+        if (data[2][0] == '@') {
+            newName = data[2];
+            newName.erase(0, 1);
+
+            if (Data::checkSameName(newName)) {
+                return "enter another name\n";
+            }
+            Data::s_sequencename[newName] = dna;
+            Data::s_sequencename.erase(m_name);
+            return "success\n";
+        }
+        return "invalid\n";
+    }
+    return "invalid\n";
+}
+
+/*----------------------------------------End Sequence Management!!--------------------------------*/
+
+
+std::string Delete::execute(std::vector<std::string> data) {
+    std::string key, name;
+    if (data.size() == 2) {
+        if (data[1][0] == '#') {
+            key = data[1];
+            key.erase(0, 1);
+            name = Data::getAllKeysForValue(Data::s_sequencename, Data::s_sequencekey.find(key)->second);
+
+        } else if (Data::checkSameName(data[1])) {
+            name = data[1];
+            key = Data::getAllKeysForValue(Data::s_sequencekey, Data::s_sequencename.find(name)->second);
+        }else
+        {
+            return "invalid";
+        }
+        Data::s_sequencename.erase(name);
+        Data::s_sequencekey.erase(key);
+        return "success";
+    }
+    return "invalid";
+}
