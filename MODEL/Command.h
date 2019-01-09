@@ -137,6 +137,22 @@ private:
 
 };
 
+class Replace: public Command {
+public:
+    Replace(){
+
+    }
+    virtual std::string execute(std::vector<std::string> data);
+
+    virtual ~Replace() {};
+    static size_t m_id;
+private:
+
+    std::string m_name;
+    std::string m_sequence;
+
+};
+
 
 /*------------------------------------- End Sequence Manipulation!!--------------------------------*/
 /*-------------------------------------------Sequence Management--------------------------------*/

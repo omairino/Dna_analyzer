@@ -11,5 +11,6 @@ void CommandRun::start() {
     s_commad["dup"] = boost::shared_ptr<Command>(new Dup());
     s_commad["rename"] = boost::shared_ptr<Command>(new Rename());
     s_commad["del"] = boost::shared_ptr<Command>(new Delete());
+    s_commad["replace"] = boost::shared_ptr<Command>(new Replace());
 }
 
