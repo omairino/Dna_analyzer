@@ -101,4 +101,21 @@ private:
 
 };
 
+
+class Slice: public Command {
+public:
+    Slice(){
+
+    }
+    virtual std::string execute(std::vector<std::string> data);
+
+    virtual ~Slice() {};
+    static size_t m_id;
+private:
+
+    std::string m_name;
+    std::string m_sequence;
+
+};
+
 #endif
