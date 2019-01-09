@@ -43,6 +43,23 @@ private:
 };
 
 
+class Dup : public Command {
+public:
+    Dup() {}
+
+
+    virtual std::string execute(std::vector<std::string> data);
+
+
+private:
+    std::string m_sequence;
+    std::string m_name;
+};
+
+
+
+
+
 /*---------------CommandSequenceManagement----------------------*/
 
 
