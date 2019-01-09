@@ -17,7 +17,7 @@ public:
 
     void start();
 
-    void split(std::string strToSplit);
+    void run(std::string strToSplit);
 
     void print(std::string line);
 

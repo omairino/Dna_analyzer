@@ -7,7 +7,7 @@ Controller::Controller(const CLI &cli, CommandRun &command) {
     m_command = command;
 }
 
-void Controller::split(std::string strToSplit) {
+void Controller::run(std::string strToSplit) {
     std::vector<std::string> splittedStrings;
     CommandParser::parser(strToSplit, &splittedStrings);
     std::string line;
@@ -28,7 +28,7 @@ Controller::Controller() {
 }
 
 void Controller::start() {
-    split(m_cli.start());
+    run(m_cli.start());
 }
 
 void Controller::print(std::string line) {

@@ -84,4 +84,21 @@ public:
 
 };
 
+
+class Pair: public Command {
+public:
+    Pair(){
+
+    }
+    virtual std::string execute(std::vector<std::string> data);
+
+    virtual ~Pair() {};
+    static size_t m_id;
+private:
+
+    std::string m_name;
+    std::string m_sequence;
+
+};
+
 #endif
