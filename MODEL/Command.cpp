@@ -36,13 +36,24 @@ std::string NewCmd::execute(std::vector<std::string> data) {
 
 
 std::string PrintCmd::execute(std::vector<std::string> data) {
-    m_key = data[1];
     std::ostringstream ss;
     std::string key, name;
-    key = Data::getAllKeysForValue(Data::s_sequencekey, Data::s_sequencekey.find(m_key)->second);
-    name = Data::getAllKeysForValue(Data::s_sequencekey, Data::s_sequencekey.find(m_key)->second);
-    ss << "[" << key << "] " << name << ": "
-       << Data::s_sequencekey.find(key)->second->getsequence() << std::endl;
+    if (data.size() == 2) {
+        m_key = data[1];
+        if (data[1][0] == '#' ) {
+            m_key.erase(0,1);
+            key = Data::getAllKeysForValue(Data::s_sequencekey, Data::s_sequencekey.find(m_key)->second);
+            name = Data::getAllKeysForValue(Data::s_sequencename, Data::s_sequencekey.find(m_key)->second);
+            ss << "[" << key << "] " << name << ": "
+               << Data::s_sequencekey.find(key)->second->getsequence() << std::endl;
+        } else{
+            name = Data::getAllKeysForValue(Data::s_sequencename, Data::s_sequencename.find(m_key)->second);
+            key = Data::getAllKeysForValue(Data::s_sequencekey, Data::s_sequencename.find(m_key)->second);
+            ss << "[" << key << "] " << name << ": "
+               << Data::s_sequencekey.find(key)->second->getsequence() << std::endl;
+        }
+
+    }
     return ss.str();
 
 }
