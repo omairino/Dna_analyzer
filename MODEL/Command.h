@@ -18,6 +18,7 @@ public:
 
     virtual std::string execute(std::vector<std::string> data);
 
+    void parsing(std::vector<std::string> &data);
 
     virtual ~NewCmd() {}
 
@@ -30,7 +31,7 @@ class Load : public Command {
 public:
     Load() {}
 
-    Load(std::vector<std::string> data);
+    void parsing(std::vector<std::string> &data);
 
     virtual std::string execute(std::vector<std::string> data);
 
@@ -45,6 +46,7 @@ class Dup : public Command {
 public:
     Dup() {}
 
+    void parsing(std::vector<std::string> &data);
 
     virtual std::string execute(std::vector<std::string> data);
 
@@ -192,6 +194,8 @@ public:
     Delete() {}
 
     virtual std::string execute(std::vector<std::string> data);
+
+    void parsing(std::vector<std::string> &data);
 
     virtual ~Delete() {};
     static size_t m_id;

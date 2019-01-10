@@ -70,7 +70,7 @@ public:
 
     static std::map<std::string, boost::shared_ptr<DnaSequence> > s_sequencekey;
     static std::map<std::string, boost::shared_ptr<DnaSequence> > s_sequencename;
-
+    static std::map<boost::shared_ptr<DnaSequence>,std::string> s_status ;
     static std::string getAllKeysForValue(std::map<std::string, boost::shared_ptr<DnaSequence> > mapOfWords,
                                           boost::shared_ptr<DnaSequence> value) {
         std::map<std::string, boost::shared_ptr<DnaSequence> >::iterator it = mapOfWords.begin();

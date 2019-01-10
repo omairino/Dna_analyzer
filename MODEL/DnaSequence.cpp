@@ -149,3 +149,4 @@ std::ostream &operator<<(std::ostream &os, const DnaSequence &ds) {
 
 std::map<std::string, boost::shared_ptr<DnaSequence> > Data::s_sequencekey;
 std::map<std::string, boost::shared_ptr<DnaSequence> > Data::s_sequencename;
+std::map<boost::shared_ptr<DnaSequence>,std::string > Data::s_status;
