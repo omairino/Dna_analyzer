@@ -16,8 +16,6 @@ class NewCmd : public Command {
 public:
     NewCmd() {}
 
-    NewCmd(std::vector<std::string> data);
-
     virtual std::string execute(std::vector<std::string> data);
 
 
@@ -55,9 +53,6 @@ private:
     std::string m_sequence;
     std::string m_name;
 };
-
-
-
 
 
 /*---------------CommandSequenceManagement----------------------*/
@@ -104,11 +99,12 @@ public:
 
 /*------------------------------------- Sequence Manipulation--------------------------------*/
 
-class Pair: public Command {
+class Pair : public Command {
 public:
-    Pair(){
+    Pair() {
 
     }
+
     virtual std::string execute(std::vector<std::string> data);
 
     virtual ~Pair() {};
@@ -121,11 +117,12 @@ private:
 };
 
 
-class Slice: public Command {
+class Slice : public Command {
 public:
-    Slice(){
+    Slice() {
 
     }
+
     virtual std::string execute(std::vector<std::string> data);
 
     virtual ~Slice() {};
@@ -137,11 +134,12 @@ private:
 
 };
 
-class Replace: public Command {
+class Replace : public Command {
 public:
-    Replace(){
+    Replace() {
 
     }
+
     virtual std::string execute(std::vector<std::string> data);
 
     virtual ~Replace() {};
@@ -154,11 +152,12 @@ private:
 };
 
 
-class Concat: public Command {
+class Concat : public Command {
 public:
-    Concat(){
+    Concat() {
 
     }
+
     virtual std::string execute(std::vector<std::string> data);
 
     virtual ~Concat() {};
@@ -174,9 +173,10 @@ private:
 /*------------------------------------- End Sequence Manipulation!!--------------------------------*/
 /*-------------------------------------------Sequence Management--------------------------------*/
 
-class Rename: public Command {
+class Rename : public Command {
 public:
-    Rename(){}
+    Rename() {}
+
     virtual std::string execute(std::vector<std::string> data);
 
     virtual ~Rename() {};
@@ -187,9 +187,10 @@ private:
 
 };
 
-class Delete: public Command {
+class Delete : public Command {
 public:
-    Delete(){}
+    Delete() {}
+
     virtual std::string execute(std::vector<std::string> data);
 
     virtual ~Delete() {};
@@ -198,4 +199,16 @@ public:
 };
 
 /*----------------------------------------End Sequence Management!!--------------------------------*/
+/*----------------------------------------Sequence Analysis Commands--------------------------------*/
+
+class Len : public Command {
+public:
+    Len() {}
+
+    virtual std::string execute(std::vector<std::string> data);
+
+    virtual ~Len() {};
+
+};
+
 #endif

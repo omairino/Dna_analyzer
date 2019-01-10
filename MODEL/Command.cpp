@@ -405,17 +405,17 @@ std::string Concat::execute(std::vector<std::string> data) {
         size = (int) (data.size() - 1);
     }
     std::string indexkey;
-    if ((data[1][0] != '#')){
+    if ((data[1][0] != '#')) {
         for (int i = 1; i < size; i++) {
             m_sequence += Data::s_sequencename.find(data[i + 1])->second->getsequence();
-        }}
-        else{
+        }
+    } else {
         for (int i = 1; i < size; i++) {
             indexkey = data[i + 1];
-            indexkey.erase(0,1);
+            indexkey.erase(0, 1);
             m_sequence += Data::s_sequencekey.find(indexkey)->second->getsequence();
         }
-        }
+    }
 
 
     if (m_sequence.length() == 0) {
@@ -500,3 +500,11 @@ std::string Delete::execute(std::vector<std::string> data) {
     return "invalid";
 }
 
+std::string Len::execute(std::vector<std::string> data) {
+    if(Data::s_sequencekey.find(data[1]) != Data::s_sequencekey.end()){
+    std::ostringstream length;
+    length << Data::s_sequencekey.find(data[1])->second->getsequence().length()<<std::endl;
+    return length.str();
+    }
+    return "id invalid\n";
+}
