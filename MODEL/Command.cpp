@@ -330,7 +330,7 @@ std::string Replace::execute(std::vector<std::string> data) {
         m_sequence = Data::s_sequencename.find(m_name)->second->getsequence();
     }
 
-    if (data.size() > 5) {
+    if (data.size() > 6) {
 
         if (data[data.size() - 1] == "@@") {
             std::ostringstream line;
@@ -356,7 +356,13 @@ std::string Replace::execute(std::vector<std::string> data) {
         return "error\n";
     }
     if (Data::checkSameName(m_name)) {
-        return "invalid name\n";
+        std::ostringstream lins;
+        std::string key = Data::getAllKeysForValue(Data::s_sequencekey, Data::s_sequencename.find(m_name)->second);
+        boost::shared_ptr<DnaSequence> dna = boost::shared_ptr<DnaSequence>(new DnaSequence(m_sequence));
+        Data::s_sequencekey[key] = dna;
+        Data::s_sequencename[m_name] = dna;
+        lins << '[' << key << ']' << " " << m_name << ": " << m_sequence << "\n";
+        return lins.str();
     }
 
     std::ostringstream ss;
@@ -398,10 +404,18 @@ std::string Concat::execute(std::vector<std::string> data) {
     } else {
         size = (int) (data.size() - 1);
     }
-
-    for (int i = 1; i < size; i++) {
-        m_sequence += Data::s_sequencename.find(data[i + 1])->second->getsequence();
-    }
+    std::string indexkey;
+    if ((data[1][0] != '#')){
+        for (int i = 1; i < size; i++) {
+            m_sequence += Data::s_sequencename.find(data[i + 1])->second->getsequence();
+        }}
+        else{
+        for (int i = 1; i < size; i++) {
+            indexkey = data[i + 1];
+            indexkey.erase(0,1);
+            m_sequence += Data::s_sequencekey.find(indexkey)->second->getsequence();
+        }
+        }
 
 
     if (m_sequence.length() == 0) {
