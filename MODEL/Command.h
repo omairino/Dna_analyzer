@@ -95,11 +95,11 @@ private:
 
 class Replace : public Command {
 public:
-    Replace() {
-
-    }
+    Replace() {}
 
     virtual std::string execute(std::vector<std::string> data);
+
+    int parsing(std::vector<std::string> &data);
 
     virtual ~Replace() {};
     static size_t m_id;
@@ -107,6 +107,7 @@ private:
 
     std::string m_name;
     std::string m_sequence;
+    std::string m_key;
 
 };
 
