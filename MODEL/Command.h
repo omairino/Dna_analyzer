@@ -2,7 +2,7 @@
 #define EXCELLENTEAM_EREZ_C_DNA_ANALYZER_OMAIRINO_COMMAND_H
 
 #include "DnaSequence.h"
-
+#include "Decerator.h"
 class Command {
 public:
     virtual std::string execute(std::vector<std::string> data) = 0;

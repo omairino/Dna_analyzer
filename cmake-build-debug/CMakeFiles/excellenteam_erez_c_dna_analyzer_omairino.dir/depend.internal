@@ -7,12 +7,16 @@ CMakeFiles/excellenteam_erez_c_dna_analyzer_omairino.dir/CONTROLLER/Controller.c
  /home/omairino/Desktop/newproject/excellenteam-erez-c-dna-analyzer-omairino/MODEL/Command.h
  /home/omairino/Desktop/newproject/excellenteam-erez-c-dna-analyzer-omairino/MODEL/CommandParser.h
  /home/omairino/Desktop/newproject/excellenteam-erez-c-dna-analyzer-omairino/MODEL/CommandRun.h
+ /home/omairino/Desktop/newproject/excellenteam-erez-c-dna-analyzer-omairino/MODEL/Decerator.h
  /home/omairino/Desktop/newproject/excellenteam-erez-c-dna-analyzer-omairino/MODEL/DnaSequence.h
+ /home/omairino/Desktop/newproject/excellenteam-erez-c-dna-analyzer-omairino/MODEL/Nucleotide.h
  /home/omairino/Desktop/newproject/excellenteam-erez-c-dna-analyzer-omairino/VIEW/Cmd.h
 CMakeFiles/excellenteam_erez_c_dna_analyzer_omairino.dir/MODEL/Command.cpp.o
  /home/omairino/Desktop/newproject/excellenteam-erez-c-dna-analyzer-omairino/MODEL/Command.cpp
  /home/omairino/Desktop/newproject/excellenteam-erez-c-dna-analyzer-omairino/MODEL/Command.h
+ /home/omairino/Desktop/newproject/excellenteam-erez-c-dna-analyzer-omairino/MODEL/Decerator.h
  /home/omairino/Desktop/newproject/excellenteam-erez-c-dna-analyzer-omairino/MODEL/DnaSequence.h
+ /home/omairino/Desktop/newproject/excellenteam-erez-c-dna-analyzer-omairino/MODEL/Nucleotide.h
  /home/omairino/Desktop/newproject/excellenteam-erez-c-dna-analyzer-omairino/MODEL/WriteReadFile.h
 CMakeFiles/excellenteam_erez_c_dna_analyzer_omairino.dir/MODEL/CommandParser.cpp.o
  /home/omairino/Desktop/newproject/excellenteam-erez-c-dna-analyzer-omairino/MODEL/CommandParser.cpp
@@ -21,12 +25,24 @@ CMakeFiles/excellenteam_erez_c_dna_analyzer_omairino.dir/MODEL/CommandRun.cpp.o
  /home/omairino/Desktop/newproject/excellenteam-erez-c-dna-analyzer-omairino/MODEL/Command.h
  /home/omairino/Desktop/newproject/excellenteam-erez-c-dna-analyzer-omairino/MODEL/CommandRun.cpp
  /home/omairino/Desktop/newproject/excellenteam-erez-c-dna-analyzer-omairino/MODEL/CommandRun.h
+ /home/omairino/Desktop/newproject/excellenteam-erez-c-dna-analyzer-omairino/MODEL/Decerator.h
  /home/omairino/Desktop/newproject/excellenteam-erez-c-dna-analyzer-omairino/MODEL/DnaSequence.h
+ /home/omairino/Desktop/newproject/excellenteam-erez-c-dna-analyzer-omairino/MODEL/Nucleotide.h
+CMakeFiles/excellenteam_erez_c_dna_analyzer_omairino.dir/MODEL/Decerator.cpp.o
+ /home/omairino/Desktop/newproject/excellenteam-erez-c-dna-analyzer-omairino/MODEL/Decerator.cpp
+ /home/omairino/Desktop/newproject/excellenteam-erez-c-dna-analyzer-omairino/MODEL/Decerator.h
+ /home/omairino/Desktop/newproject/excellenteam-erez-c-dna-analyzer-omairino/MODEL/DnaSequence.h
+ /home/omairino/Desktop/newproject/excellenteam-erez-c-dna-analyzer-omairino/MODEL/Nucleotide.h
 CMakeFiles/excellenteam_erez_c_dna_analyzer_omairino.dir/MODEL/DnaSequence.cpp.o
  /home/omairino/Desktop/newproject/excellenteam-erez-c-dna-analyzer-omairino/MODEL/DnaSequence.cpp
  /home/omairino/Desktop/newproject/excellenteam-erez-c-dna-analyzer-omairino/MODEL/DnaSequence.h
+ /home/omairino/Desktop/newproject/excellenteam-erez-c-dna-analyzer-omairino/MODEL/Nucleotide.h
+CMakeFiles/excellenteam_erez_c_dna_analyzer_omairino.dir/MODEL/Nucleotide.cpp.o
+ /home/omairino/Desktop/newproject/excellenteam-erez-c-dna-analyzer-omairino/MODEL/Nucleotide.cpp
+ /home/omairino/Desktop/newproject/excellenteam-erez-c-dna-analyzer-omairino/MODEL/Nucleotide.h
 CMakeFiles/excellenteam_erez_c_dna_analyzer_omairino.dir/MODEL/WriteReadFile.cpp.o
  /home/omairino/Desktop/newproject/excellenteam-erez-c-dna-analyzer-omairino/MODEL/DnaSequence.h
+ /home/omairino/Desktop/newproject/excellenteam-erez-c-dna-analyzer-omairino/MODEL/Nucleotide.h
  /home/omairino/Desktop/newproject/excellenteam-erez-c-dna-analyzer-omairino/MODEL/WriteReadFile.cpp
  /home/omairino/Desktop/newproject/excellenteam-erez-c-dna-analyzer-omairino/MODEL/WriteReadFile.h
 CMakeFiles/excellenteam_erez_c_dna_analyzer_omairino.dir/VIEW/Cmd.cpp.o

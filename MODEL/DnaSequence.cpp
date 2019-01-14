@@ -1,29 +1,33 @@
 #include <cstring>
 #include "DnaSequence.h"
-
-Nucleotide::Nucleotide(const char nucleotide) {
-    if ((nucleotide != 'A') && (nucleotide != 'G') && (nucleotide != 'C') && (nucleotide != 'T')) {
-        throw std::invalid_argument("invalid Nucleotide");
+DnaSequence DnaSequence::slicing(size_t from, size_t to) const {
+    if (from < 0 || from > m_length || to < 0 || to > m_length || from > to) {
+        std::cout << m_length << " length " << " from " << from << " to " << to << std::endl;
+        throw std::invalid_argument("Invalid argument for method slice");
     }
-    m_nucleotide = nucleotide;
+    std::string result;
+    for (size_t i = from; i < to; i++) {
+        result += m_sequence[i].getNucleotide();
+
+    }
+
+    return DnaSequence(result);
 }
 
-Nucleotide::Nucleotide() {}
+DnaSequence DnaSequence::pairing() const {
+    std::string result;
+    for (int i = 0; i < m_length; i++) {
+        if (m_sequence[i].getNucleotide() == 'T')
+            result += 'A';
+        else if (m_sequence[i].getNucleotide() == 'A')
+            result += 'T';
+        else if (m_sequence[i].getNucleotide() == 'G')
+            result += 'C';
+        else
+            result += 'G';
 
-Nucleotide::~Nucleotide() {}
-
-char Nucleotide::getNucleotide() {
-    return m_nucleotide;
-}
-
-Nucleotide &Nucleotide::operator=(const Nucleotide &other) {
-    this->m_nucleotide = other.m_nucleotide;
-    return *this;
-}
-
-std::ostream &operator<<(std::ostream &os, const Nucleotide &dt) {
-    os << dt.m_nucleotide;
-    return os;
+    }
+    return DnaSequence(result);
 }
 
 DnaSequence::DnaSequence(const char *sequence) {
@@ -67,9 +71,9 @@ DnaSequence::DnaSequence(const std::string &sequence) {
 
 DnaSequence::DnaSequence(const DnaSequence &other) {
 
-        m_sequence = new Nucleotide[strlen((char *) other.m_sequence) + 1];
-        strcpy((char *) m_sequence, (char* ) other.m_sequence);
-        m_length = other.m_length;
+    m_sequence = new Nucleotide[strlen((char *) other.m_sequence) + 1];
+    strcpy((char *) m_sequence, (char *) other.m_sequence);
+    m_length = other.m_length;
 
 }
 
@@ -78,17 +82,16 @@ DnaSequence::~DnaSequence() {
 }
 
 DnaSequence &DnaSequence::operator=(const DnaSequence &other) {
-    if (this != &other && m_length!=0)
-    {
+    if (this != &other && m_length != 0) {
         delete[] m_sequence;
         m_sequence = new Nucleotide[strlen((char *) other.m_sequence) + 1];
-        strcpy((char *) m_sequence, (char* ) other.m_sequence);
+        strcpy((char *) m_sequence, (char *) other.m_sequence);
         m_length = other.m_length;
 
-    }else{
+    } else {
 
         m_sequence = new Nucleotide[strlen((char *) other.m_sequence) + 1];
-        strcpy((char *) m_sequence, (char* ) other.m_sequence);
+        strcpy((char *) m_sequence, (char *) other.m_sequence);
         m_length = other.m_length;
     }
     return *this;
@@ -149,4 +152,4 @@ std::ostream &operator<<(std::ostream &os, const DnaSequence &ds) {
 
 std::map<std::string, boost::shared_ptr<DnaSequence> > Data::s_sequencekey;
 std::map<std::string, boost::shared_ptr<DnaSequence> > Data::s_sequencename;
-std::map<boost::shared_ptr<DnaSequence>,std::string > Data::s_status;
+std::map<boost::shared_ptr<DnaSequence>, std::string> Data::s_status;

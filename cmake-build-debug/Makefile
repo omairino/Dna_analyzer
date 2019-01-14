@@ -231,6 +231,33 @@ MODEL/CommandRun.cpp.s:
 	$(MAKE) -f CMakeFiles/excellenteam_erez_c_dna_analyzer_omairino.dir/build.make CMakeFiles/excellenteam_erez_c_dna_analyzer_omairino.dir/MODEL/CommandRun.cpp.s
 .PHONY : MODEL/CommandRun.cpp.s
 
+MODEL/Decerator.o: MODEL/Decerator.cpp.o
+
+.PHONY : MODEL/Decerator.o
+
+# target to build an object file
+MODEL/Decerator.cpp.o:
+	$(MAKE) -f CMakeFiles/excellenteam_erez_c_dna_analyzer_omairino.dir/build.make CMakeFiles/excellenteam_erez_c_dna_analyzer_omairino.dir/MODEL/Decerator.cpp.o
+.PHONY : MODEL/Decerator.cpp.o
+
+MODEL/Decerator.i: MODEL/Decerator.cpp.i
+
+.PHONY : MODEL/Decerator.i
+
+# target to preprocess a source file
+MODEL/Decerator.cpp.i:
+	$(MAKE) -f CMakeFiles/excellenteam_erez_c_dna_analyzer_omairino.dir/build.make CMakeFiles/excellenteam_erez_c_dna_analyzer_omairino.dir/MODEL/Decerator.cpp.i
+.PHONY : MODEL/Decerator.cpp.i
+
+MODEL/Decerator.s: MODEL/Decerator.cpp.s
+
+.PHONY : MODEL/Decerator.s
+
+# target to generate assembly for a file
+MODEL/Decerator.cpp.s:
+	$(MAKE) -f CMakeFiles/excellenteam_erez_c_dna_analyzer_omairino.dir/build.make CMakeFiles/excellenteam_erez_c_dna_analyzer_omairino.dir/MODEL/Decerator.cpp.s
+.PHONY : MODEL/Decerator.cpp.s
+
 MODEL/DnaSequence.o: MODEL/DnaSequence.cpp.o
 
 .PHONY : MODEL/DnaSequence.o
@@ -257,6 +284,33 @@ MODEL/DnaSequence.s: MODEL/DnaSequence.cpp.s
 MODEL/DnaSequence.cpp.s:
 	$(MAKE) -f CMakeFiles/excellenteam_erez_c_dna_analyzer_omairino.dir/build.make CMakeFiles/excellenteam_erez_c_dna_analyzer_omairino.dir/MODEL/DnaSequence.cpp.s
 .PHONY : MODEL/DnaSequence.cpp.s
+
+MODEL/Nucleotide.o: MODEL/Nucleotide.cpp.o
+
+.PHONY : MODEL/Nucleotide.o
+
+# target to build an object file
+MODEL/Nucleotide.cpp.o:
+	$(MAKE) -f CMakeFiles/excellenteam_erez_c_dna_analyzer_omairino.dir/build.make CMakeFiles/excellenteam_erez_c_dna_analyzer_omairino.dir/MODEL/Nucleotide.cpp.o
+.PHONY : MODEL/Nucleotide.cpp.o
+
+MODEL/Nucleotide.i: MODEL/Nucleotide.cpp.i
+
+.PHONY : MODEL/Nucleotide.i
+
+# target to preprocess a source file
+MODEL/Nucleotide.cpp.i:
+	$(MAKE) -f CMakeFiles/excellenteam_erez_c_dna_analyzer_omairino.dir/build.make CMakeFiles/excellenteam_erez_c_dna_analyzer_omairino.dir/MODEL/Nucleotide.cpp.i
+.PHONY : MODEL/Nucleotide.cpp.i
+
+MODEL/Nucleotide.s: MODEL/Nucleotide.cpp.s
+
+.PHONY : MODEL/Nucleotide.s
+
+# target to generate assembly for a file
+MODEL/Nucleotide.cpp.s:
+	$(MAKE) -f CMakeFiles/excellenteam_erez_c_dna_analyzer_omairino.dir/build.make CMakeFiles/excellenteam_erez_c_dna_analyzer_omairino.dir/MODEL/Nucleotide.cpp.s
+.PHONY : MODEL/Nucleotide.cpp.s
 
 MODEL/WriteReadFile.o: MODEL/WriteReadFile.cpp.o
 
@@ -333,9 +387,15 @@ help:
 	@echo "... MODEL/CommandRun.o"
 	@echo "... MODEL/CommandRun.i"
 	@echo "... MODEL/CommandRun.s"
+	@echo "... MODEL/Decerator.o"
+	@echo "... MODEL/Decerator.i"
+	@echo "... MODEL/Decerator.s"
 	@echo "... MODEL/DnaSequence.o"
 	@echo "... MODEL/DnaSequence.i"
 	@echo "... MODEL/DnaSequence.s"
+	@echo "... MODEL/Nucleotide.o"
+	@echo "... MODEL/Nucleotide.i"
+	@echo "... MODEL/Nucleotide.s"
 	@echo "... MODEL/WriteReadFile.o"
 	@echo "... MODEL/WriteReadFile.i"
 	@echo "... MODEL/WriteReadFile.s"

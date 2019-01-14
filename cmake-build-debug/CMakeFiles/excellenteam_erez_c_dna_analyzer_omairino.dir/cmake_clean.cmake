@@ -1,4 +1,5 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/excellenteam_erez_c_dna_analyzer_omairino.dir/MODEL/Nucleotide.cpp.o"
   "CMakeFiles/excellenteam_erez_c_dna_analyzer_omairino.dir/MODEL/CommandRun.cpp.o"
   "CMakeFiles/excellenteam_erez_c_dna_analyzer_omairino.dir/MODEL/DnaSequence.cpp.o"
   "CMakeFiles/excellenteam_erez_c_dna_analyzer_omairino.dir/VIEW/Cmd.cpp.o"
@@ -6,6 +7,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/excellenteam_erez_c_dna_analyzer_omairino.dir/MODEL/Command.cpp.o"
   "CMakeFiles/excellenteam_erez_c_dna_analyzer_omairino.dir/MODEL/WriteReadFile.cpp.o"
   "CMakeFiles/excellenteam_erez_c_dna_analyzer_omairino.dir/MODEL/CommandParser.cpp.o"
+  "CMakeFiles/excellenteam_erez_c_dna_analyzer_omairino.dir/MODEL/Decerator.cpp.o"
   "excellenteam_erez_c_dna_analyzer_omairino.pdb"
   "excellenteam_erez_c_dna_analyzer_omairino"
 )

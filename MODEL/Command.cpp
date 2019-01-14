@@ -157,7 +157,7 @@ std::string Pair::execute(std::vector<std::string> data) {
 
     parsing(data);
 
-    if (m_sequence.length() == 0) {
+    if (m_sequence.length()== 0) {
         return "id or name is invalid\n";
     }
 
@@ -217,7 +217,9 @@ void Pair::parsing(std::vector<std::string> &data) {
             m_key = Data::getAllKeysForValue(Data::s_sequencekey, Data::s_sequencename.find(m_name)->second);
         }
     }
-
+    boost::shared_ptr<IDna> d = boost::shared_ptr<IDna> (new PairDecerator(boost::shared_ptr<IDna>(new Dnasequence(Data::s_sequencekey.find(m_key)->second))));
+    d->execute();
+    std::cout<<(*d);
     std::ostringstream line;
     if (data.size() == 4) {
         if (data[3] == "@@") {

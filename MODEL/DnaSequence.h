@@ -5,28 +5,16 @@
 #include <vector>
 #include <map>
 #include <boost/shared_ptr.hpp>
+#include "Nucleotide.h"
 
-class Nucleotide {
-    char m_nucleotide;
-public:
-    Nucleotide(const char nucleotide);
-
-    Nucleotide();
-
-    ~Nucleotide();
-
-    char getNucleotide();
-
-    Nucleotide &operator=(const Nucleotide &other);
-
-    friend std::ostream &operator<<(std::ostream &os, const Nucleotide &dt);
-};
 
 class DnaSequence {
 public:
     DnaSequence() : m_length(0) {
 
     };
+
+    DnaSequence pairing() const;
 
     DnaSequence(const char *sequence);
 
@@ -35,6 +23,7 @@ public:
     DnaSequence(const DnaSequence &other);
 
     ~DnaSequence();
+
 
     DnaSequence &operator=(const DnaSequence &other);
 
@@ -51,6 +40,7 @@ public:
     size_t sequencelength() const;
 
     std::string getsequence();
+    DnaSequence slicing(size_t from, size_t to) const;
 
     friend std::ostream &operator<<(std::ostream &os, const DnaSequence &ds);
 
@@ -70,7 +60,8 @@ public:
 
     static std::map<std::string, boost::shared_ptr<DnaSequence> > s_sequencekey;
     static std::map<std::string, boost::shared_ptr<DnaSequence> > s_sequencename;
-    static std::map<boost::shared_ptr<DnaSequence>,std::string> s_status ;
+    static std::map<boost::shared_ptr<DnaSequence>, std::string> s_status;
+
     static std::string getAllKeysForValue(std::map<std::string, boost::shared_ptr<DnaSequence> > mapOfWords,
                                           boost::shared_ptr<DnaSequence> value) {
         std::map<std::string, boost::shared_ptr<DnaSequence> >::iterator it = mapOfWords.begin();
