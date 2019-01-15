@@ -2,17 +2,10 @@
 #ifndef EXCELLENTEAM_EREZ_C_DNA_ANALYZER_OMAIRINO_DECERATOR_H
 #define EXCELLENTEAM_EREZ_C_DNA_ANALYZER_OMAIRINO_DECERATOR_H
 
-#include "DnaSequence.h"
-
-struct IDna {
-    virtual Nucleotide operator[](size_t index) const = 0;
-
-    virtual ~IDna() {}
-
-    virtual size_t size() const = 0;
-
-    virtual void execute() const = 0;
-};
+#include "abstractDecerator.h"
+#include <boost/shared_ptr.hpp>
+#include <map>
+#include <vector>
 
 
 class DnaDecerator : public IDna {
@@ -29,18 +22,21 @@ public:
         m_dna->execute();
     }
 
+
     boost::shared_ptr<IDna> m_dna;
-    size_t m_from;
-    size_t m_to;
+    std::vector<boost::shared_ptr<IDna> > datas;
+    static std::map<std::string, char> data;
+
 };
 
-std::ostream &operator<<(std::ostream &os, const IDna &dna);
+
+//std::ostream &operator<<(std::ostream &os, const IDna &dna);
 
 class Dnasequence : public IDna {
 public:
-    boost::shared_ptr<DnaSequence> m_dna;
+    boost::shared_ptr<IDna> m_dna;
 
-    Dnasequence(boost::shared_ptr<DnaSequence> dna);
+    explicit Dnasequence(boost::shared_ptr<IDna> dna);
 
     virtual Nucleotide operator[](size_t index) const;
 
@@ -74,6 +70,36 @@ public:
 
     virtual void execute() const;
 
+
+};
+
+class ReplaceDecerator : public DnaDecerator {
+
+public:
+    ReplaceDecerator(boost::shared_ptr<IDna> dna, std::map<std::string, char> data);
+
+    virtual size_t size() const;
+
+    virtual Nucleotide operator[](size_t index) const;
+
+    virtual void execute() const;
+
+
+};
+
+class ConcatDecerator : public DnaDecerator {
+
+public:
+    ConcatDecerator(std::vector<boost::shared_ptr<IDna> > &data);
+
+    virtual size_t size() const;
+
+    virtual Nucleotide operator[](size_t index) const;
+
+    virtual void execute() const;
+
+private:
+    std::vector<boost::shared_ptr<IDna> > m_data;
 
 };
 

@@ -43,8 +43,8 @@ WriteReadFile.h
 /home/omairino/Desktop/newproject/excellenteam-erez-c-dna-analyzer-omairino/MODEL/Command.h
 DnaSequence.h
 /home/omairino/Desktop/newproject/excellenteam-erez-c-dna-analyzer-omairino/MODEL/DnaSequence.h
-Decerator.h
-/home/omairino/Desktop/newproject/excellenteam-erez-c-dna-analyzer-omairino/MODEL/Decerator.h
+DATA.h
+/home/omairino/Desktop/newproject/excellenteam-erez-c-dna-analyzer-omairino/MODEL/DATA.h
 
 /home/omairino/Desktop/newproject/excellenteam-erez-c-dna-analyzer-omairino/MODEL/CommandParser.h
 vector
@@ -60,17 +60,41 @@ CommandRun.h
 Command.h
 /home/omairino/Desktop/newproject/excellenteam-erez-c-dna-analyzer-omairino/MODEL/Command.h
 
+/home/omairino/Desktop/newproject/excellenteam-erez-c-dna-analyzer-omairino/MODEL/DATA.cpp
+DATA.h
+/home/omairino/Desktop/newproject/excellenteam-erez-c-dna-analyzer-omairino/MODEL/DATA.h
+
+/home/omairino/Desktop/newproject/excellenteam-erez-c-dna-analyzer-omairino/MODEL/DATA.h
+iostream
+-
+boost/shared_ptr.hpp
+-
+map
+-
+Decerator.h
+/home/omairino/Desktop/newproject/excellenteam-erez-c-dna-analyzer-omairino/MODEL/Decerator.h
+
 /home/omairino/Desktop/newproject/excellenteam-erez-c-dna-analyzer-omairino/MODEL/Decerator.cpp
+sstream
+-
 Decerator.h
 /home/omairino/Desktop/newproject/excellenteam-erez-c-dna-analyzer-omairino/MODEL/Decerator.h
 
 /home/omairino/Desktop/newproject/excellenteam-erez-c-dna-analyzer-omairino/MODEL/Decerator.h
+abstractDecerator.h
+/home/omairino/Desktop/newproject/excellenteam-erez-c-dna-analyzer-omairino/MODEL/abstractDecerator.h
+boost/shared_ptr.hpp
+-
+map
+-
+
+/home/omairino/Desktop/newproject/excellenteam-erez-c-dna-analyzer-omairino/MODEL/DnaSequence.cpp
+cstring
+-
 DnaSequence.h
 /home/omairino/Desktop/newproject/excellenteam-erez-c-dna-analyzer-omairino/MODEL/DnaSequence.h
 
 /home/omairino/Desktop/newproject/excellenteam-erez-c-dna-analyzer-omairino/MODEL/DnaSequence.h
-iostream
--
 vector
 -
 map
@@ -79,14 +103,34 @@ boost/shared_ptr.hpp
 -
 Nucleotide.h
 /home/omairino/Desktop/newproject/excellenteam-erez-c-dna-analyzer-omairino/MODEL/Nucleotide.h
+Decerator.h
+/home/omairino/Desktop/newproject/excellenteam-erez-c-dna-analyzer-omairino/MODEL/Decerator.h
 
 /home/omairino/Desktop/newproject/excellenteam-erez-c-dna-analyzer-omairino/MODEL/Nucleotide.h
 iostream
 -
 
+/home/omairino/Desktop/newproject/excellenteam-erez-c-dna-analyzer-omairino/MODEL/WriteReadFile.cpp
+WriteReadFile.h
+/home/omairino/Desktop/newproject/excellenteam-erez-c-dna-analyzer-omairino/MODEL/WriteReadFile.h
+string.h
+-
+fstream
+-
+sstream
+-
+
 /home/omairino/Desktop/newproject/excellenteam-erez-c-dna-analyzer-omairino/MODEL/WriteReadFile.h
 DnaSequence.h
 /home/omairino/Desktop/newproject/excellenteam-erez-c-dna-analyzer-omairino/MODEL/DnaSequence.h
+
+/home/omairino/Desktop/newproject/excellenteam-erez-c-dna-analyzer-omairino/MODEL/abstractDecerator.cpp
+abstractDecerator.h
+/home/omairino/Desktop/newproject/excellenteam-erez-c-dna-analyzer-omairino/MODEL/abstractDecerator.h
+
+/home/omairino/Desktop/newproject/excellenteam-erez-c-dna-analyzer-omairino/MODEL/abstractDecerator.h
+Nucleotide.h
+/home/omairino/Desktop/newproject/excellenteam-erez-c-dna-analyzer-omairino/MODEL/Nucleotide.h
 
 /home/omairino/Desktop/newproject/excellenteam-erez-c-dna-analyzer-omairino/VIEW/Cmd.h
 iostream

@@ -108,6 +108,12 @@
 		<Unit filename="/home/omairino/Desktop/newproject/excellenteam-erez-c-dna-analyzer-omairino/MODEL/CommandRun.h">
 			<Option target="excellenteam_erez_c_dna_analyzer_omairino"/>
 		</Unit>
+		<Unit filename="/home/omairino/Desktop/newproject/excellenteam-erez-c-dna-analyzer-omairino/MODEL/DATA.cpp">
+			<Option target="excellenteam_erez_c_dna_analyzer_omairino"/>
+		</Unit>
+		<Unit filename="/home/omairino/Desktop/newproject/excellenteam-erez-c-dna-analyzer-omairino/MODEL/DATA.h">
+			<Option target="excellenteam_erez_c_dna_analyzer_omairino"/>
+		</Unit>
 		<Unit filename="/home/omairino/Desktop/newproject/excellenteam-erez-c-dna-analyzer-omairino/MODEL/Decerator.cpp">
 			<Option target="excellenteam_erez_c_dna_analyzer_omairino"/>
 		</Unit>
@@ -130,6 +136,12 @@
 			<Option target="excellenteam_erez_c_dna_analyzer_omairino"/>
 		</Unit>
 		<Unit filename="/home/omairino/Desktop/newproject/excellenteam-erez-c-dna-analyzer-omairino/MODEL/WriteReadFile.h">
+			<Option target="excellenteam_erez_c_dna_analyzer_omairino"/>
+		</Unit>
+		<Unit filename="/home/omairino/Desktop/newproject/excellenteam-erez-c-dna-analyzer-omairino/MODEL/abstractDecerator.cpp">
+			<Option target="excellenteam_erez_c_dna_analyzer_omairino"/>
+		</Unit>
+		<Unit filename="/home/omairino/Desktop/newproject/excellenteam-erez-c-dna-analyzer-omairino/MODEL/abstractDecerator.h">
 			<Option target="excellenteam_erez_c_dna_analyzer_omairino"/>
 		</Unit>
 		<Unit filename="/home/omairino/Desktop/newproject/excellenteam-erez-c-dna-analyzer-omairino/VIEW/Cmd.cpp">

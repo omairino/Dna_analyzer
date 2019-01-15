@@ -2,7 +2,7 @@
 #define EXCELLENTEAM_EREZ_C_DNA_ANALYZER_OMAIRINO_COMMAND_H
 
 #include "DnaSequence.h"
-#include "Decerator.h"
+#include "DATA.h"
 class Command {
 public:
     virtual std::string execute(std::vector<std::string> data) = 0;
@@ -41,20 +41,20 @@ private:
     std::string m_name;
 };
 
-
-class Dup : public Command {
-public:
-    Dup() {}
-
-    void parsing(std::vector<std::string> &data);
-
-    virtual std::string execute(std::vector<std::string> data);
-
-
-private:
-    std::string m_sequence;
-    std::string m_name;
-};
+//
+//class Dup : public Command {
+//public:
+//    Dup() {}
+//
+//    void parsing(std::vector<std::string> &data);
+//
+//    virtual std::string execute(std::vector<std::string> data);
+//
+//
+//private:
+//    std::string m_sequence;
+//    std::string m_name;
+//};
 
 /*------------------------------------- Sequence Manipulation--------------------------------*/
 
@@ -120,12 +120,15 @@ public:
 
     virtual std::string execute(std::vector<std::string> data);
 
+    int parsing(std::vector<std::string> &data);
+
     virtual ~Concat() {};
     static size_t m_id;
 private:
 
     std::string m_name;
     std::string m_sequence;
+    std::string m_key;
 
 };
 
@@ -160,12 +163,12 @@ public:
 
 };
 
-/*----------------------------------------End Sequence Management!!--------------------------------*/
-
-
-/*---------------CommandSequenceManagement----------------------*/
-
-
+///*----------------------------------------End Sequence Management!!--------------------------------*/
+//
+//
+///*---------------CommandSequenceManagement----------------------*/
+//
+//
 class Save : public Command {
 public:
     Save() {}

@@ -19,13 +19,13 @@ private:
 
 class WriteFile {
 public:
-    WriteFile(std::string pathW, std::string sequence);
+    WriteFile(std::string pathW, boost::shared_ptr<IDna> sequence);
 
     void writefile();
 
 private:
     std::string m_path_write;
-    std::string m_sequence;
+    boost::shared_ptr<IDna> m_sequence;
 
 
 };

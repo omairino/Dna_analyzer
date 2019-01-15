@@ -127,9 +127,9 @@ bool DnaSequence::operator!=(const DnaSequence &ds) {
     return !(*this == ds);
 }
 
-Nucleotide &DnaSequence::operator[](int index) const {
-    return m_sequence[index];
-}
+//Nucleotide &DnaSequence::operator[](int index) const {
+//    return m_sequence[index];
+//}
 
 size_t DnaSequence::sequencelength() const {
     return m_length;;
@@ -148,8 +148,13 @@ std::ostream &operator<<(std::ostream &os, const DnaSequence &ds) {
     return os;
 }
 
+Nucleotide DnaSequence::operator[](size_t index) const {
+    return m_sequence[index];
+}
+
+size_t DnaSequence::size() const {
+    return m_length;
+}
 
 
-std::map<std::string, boost::shared_ptr<DnaSequence> > Data::s_sequencekey;
-std::map<std::string, boost::shared_ptr<DnaSequence> > Data::s_sequencename;
-std::map<boost::shared_ptr<DnaSequence>, std::string> Data::s_status;
+

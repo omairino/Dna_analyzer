@@ -16,6 +16,8 @@ public:
 
     Nucleotide pair() const;
 
+    Nucleotide replace(char c) const;
+
     friend bool operator==(const Nucleotide &n1, const Nucleotide &n2);
 
     bool operator==(char nu);

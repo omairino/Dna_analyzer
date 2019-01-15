@@ -23,10 +23,11 @@ void WriteFile::writefile() {
     ss<<"../DATASEQUENCE/"<<m_path_write<<".rawdna";
     std::ofstream myfile((ss.str()).c_str(),std::ios::out);
     if (myfile.is_open()) {
-        myfile << m_sequence;
+        for(int i=0;i<m_sequence->size();i++)
+        myfile << m_sequence->operator[](i);
         myfile.close();
     }
 }
 
-WriteFile::WriteFile(std::string pathW, std::string sequence) : m_path_write(pathW), m_sequence(sequence) {
+WriteFile::WriteFile(std::string pathW, boost::shared_ptr<IDna> sequence) : m_path_write(pathW), m_sequence(sequence) {
 }

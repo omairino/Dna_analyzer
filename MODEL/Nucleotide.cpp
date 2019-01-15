@@ -57,3 +57,7 @@ Nucleotide &Nucleotide::operator=(char nu) {
     m_nucleotide = nu;
     return *this;
 }
+
+Nucleotide Nucleotide::replace(char c) const {
+    return Nucleotide(c);
+}
