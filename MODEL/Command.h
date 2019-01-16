@@ -106,7 +106,6 @@ public:
 private:
 
     std::string m_name;
-    std::string m_sequence;
     std::string m_key;
 
 };
@@ -126,8 +125,8 @@ public:
     static size_t m_id;
 private:
 
+    std::vector<boost::shared_ptr<IDna> > m_sequences;
     std::string m_name;
-    std::string m_sequence;
     std::string m_key;
 
 };
@@ -173,7 +172,6 @@ class Save : public Command {
 public:
     Save() {}
 
-    Save(std::vector<std::string> data);
 
     virtual std::string execute(std::vector<std::string> data);
 

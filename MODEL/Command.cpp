@@ -171,7 +171,7 @@ std::string Pair::execute(std::vector<std::string> data) {
 
 
     boost::shared_ptr<IDna> d = boost::shared_ptr<IDna>(
-            new PairDecerator(boost::shared_ptr<IDna>(new Dnasequence(Data::s_sequencekey.find(m_key)->second))));
+            new PairDecerator(boost::shared_ptr<IDna>(Data::s_sequencekey.find(m_key)->second)));
 
     std::ostringstream lins;
     if (data.size() == 2) {
@@ -250,7 +250,7 @@ std::string Slice::execute(std::vector<std::string> data) {
     std::istringstream(data[2]) >> from;
     std::istringstream(data[3]) >> to;
     boost::shared_ptr<IDna> d = boost::shared_ptr<IDna>(
-            new SliceDecerator(boost::shared_ptr<IDna>(new Dnasequence(Data::s_sequencekey.find(m_key)->second)), from,
+            new SliceDecerator(boost::shared_ptr<IDna>(Data::s_sequencekey.find(m_key)->second), from,
                                to));
 
     std::ostringstream ss;
@@ -339,7 +339,7 @@ std::string Replace::execute(std::vector<std::string> data) {
     };
 
     boost::shared_ptr<IDna> d = boost::shared_ptr<IDna>(
-            new ReplaceDecerator(boost::shared_ptr<IDna>(new Dnasequence(Data::s_sequencekey.find(m_key)->second)),
+            new ReplaceDecerator(boost::shared_ptr<IDna>(Data::s_sequencekey.find(m_key)->second),
                                  repl));
     std::ostringstream ss;
     std::ostringstream lins;
@@ -347,15 +347,15 @@ std::string Replace::execute(std::vector<std::string> data) {
         Data::s_sequencekey[m_key] = d;
         Data::s_sequencename[m_name] = d;
         Data::s_status[d] = '*';
-        lins << '[' << m_key << ']' << " " << m_name << ": " ;
-    }else {
+        lins << '[' << m_key << ']' << " " << m_name << ": ";
+    } else {
 
 
         ss << ++s_id;
         Data::s_sequencekey[ss.str()] = d;
         Data::s_sequencename[m_name] = d;
         Data::s_status[d] = '*';
-        lins << '[' << s_id << ']' << " " << m_name << ": " ;
+        lins << '[' << s_id << ']' << " " << m_name << ": ";
 
     }
     for (size_t i = 0; i < d->size(); i++) {
@@ -411,65 +411,78 @@ std::string Concat::execute(std::vector<std::string> data) {
 
     parsing(data);
 
-    boost::shared_ptr<IDna> d = boost::shared_ptr<IDna>(
-            new ConcatDecerator(boost::shared_ptr<IDna>(new Dnasequence(Data::s_sequencekey.find(m_key)->second)));
-
+    boost::shared_ptr<IDna> d = boost::shared_ptr<IDna>(new ConcatDecerator(m_sequences));
 
     std::ostringstream ss;
     std::ostringstream lins;
     if (Data::checkSameName(m_name)) {
-        Data::s_sequencekey[m_key] = dna;
-        Data::s_sequencename[m_name] = dna;
-        lins << '[' << m_key << ']' << " " << m_name << ": " << m_sequence << "\n";
-    }else{
+        Data::s_sequencekey[m_key] = d;
+        Data::s_sequencename[m_name] = d;
+        lins << '[' << m_key << ']' << " " << m_name << ": ";
 
+    } else {
 
-    ss << ++s_id;
-    Data::s_sequencekey[ss.str()] = dna;
-    Data::s_sequencename[m_name] = dna;
-    lins << '[' << s_id << ']' << " " << m_name << ": " << m_sequence << "\n";
+        ss << ++s_id;
+        Data::s_sequencekey[ss.str()] = d;
+        Data::s_sequencename[m_name] = d;
+        lins << '[' << s_id << ']' << " " << m_name << ": ";
     }
+    for (size_t i = 0; i < d->size(); i++) {
+        if (i == 32)
+            break;
+        lins << d->operator[](i);
+    }
+    if (d->size() > 35)
+        lins << "..."
+             << d->operator[](d->size() - 3) << d->operator[](d->size() - 2) << d->operator[](d->size() - 1);
+    lins << "\n";
+    m_sequences.clear();
     return lins.str();
 }
 
 int Concat::parsing(std::vector<std::string> &data) {
-    int size = 0;
-    if (data[1][0] == '#') {
-        std::string key = data[1];
-        key.erase(0, 1);
-        m_name = Data::getAllKeysForValue(Data::s_sequencename, Data::s_sequencekey.find(key)->second);
-        m_sequence = Data::s_sequencekey.find(key)->second->getsequence();
-    } else {
-        m_name = data[1];
-        m_sequence = Data::s_sequencename.find(m_name)->second->getsequence();
-        m_key = Data::getAllKeysForValue(Data::s_sequencename, Data::s_sequencekey.find(m_name)->second);
+    size_t size;
+    std::string name;
+    std::string key;
+    if (data[data.size() - 2] == ":")
+        size = data.size() - 3;
+    else {
+        size = data.size() - 1;
 
     }
+
+    if (data[1][0] == '#') {
+        m_key = data[1];
+        m_key.erase(0, 1);
+        m_name = Data::getAllKeysForValue(Data::s_sequencename, Data::s_sequencekey.find(m_key)->second);
+    } else if (data[1][0] == '@') {
+        m_name = data[1];
+        m_name.erase(0, 1);
+        m_key = Data::getAllKeysForValue(Data::s_sequencekey, Data::s_sequencename.find(m_name)->second);
+    }
+    for (int i = 1; i <= size; i++)
+        if (data[i][0] == '#') {
+            key = data[i];
+            key.erase(0, 1);
+            name = Data::getAllKeysForValue(Data::s_sequencename, Data::s_sequencekey.find(key)->second);
+            m_sequences.push_back(Data::s_sequencekey[key]);
+        } else if (data[i][0] == '@') {
+            name = data[i];
+            name.erase(0, 1);
+            key = Data::getAllKeysForValue(Data::s_sequencekey, Data::s_sequencename.find(name)->second);
+            m_sequences.push_back(Data::s_sequencekey[key]);
+        }
+
 
     if (data.size() > 3) {
 
         if (data[data.size() - 1] == "@@") {
             std::ostringstream line;
-            line << m_name << "_r" << ++Concat::m_id;
+            line << m_name << "_c" << ++Concat::m_id;
             m_name = line.str();
-        } else {
+        } else if (data[data.size() - 1][0] == '@') {
             m_name = data[data.size() - 1];
             m_name.erase(0, 1);
-        }
-        size = (int) (data.size() - 3);
-    } else {
-        size = (int) (data.size() - 1);
-    }
-    std::string indexkey;
-    if ((data[1][0] != '#')) {
-        for (int i = 1; i < size; i++) {
-            m_sequence += Data::s_sequencename.find(data[i + 1])->second->getsequence();
-        }
-    } else {
-        for (int i = 1; i < size; i++) {
-            indexkey = data[i + 1];
-            indexkey.erase(0, 1);
-            m_sequence += Data::s_sequencekey.find(indexkey)->second->getsequence();
         }
     }
 }
@@ -510,7 +523,8 @@ std::string List::execute(std::vector<std::string> data) {
         }
         if (it->second->size() > 35)
             line << "..." << it->second->operator[](it->second->size() - 3)
-                 << it->second->operator[](it->second->size() - 2) << it->second->operator[](it->second->size() - 1);
+                 << it->second->operator[](it->second->size() - 2)
+                 << it->second->operator[](it->second->size() - 1);
         line << '\n';
         it++;
     }

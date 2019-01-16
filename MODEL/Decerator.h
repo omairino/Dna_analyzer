@@ -18,10 +18,6 @@ public:
 
     virtual size_t size() const {}
 
-    virtual void execute() const {
-        m_dna->execute();
-    }
-
 
     boost::shared_ptr<IDna> m_dna;
     std::vector<boost::shared_ptr<IDna> > datas;
@@ -29,21 +25,6 @@ public:
 
 };
 
-
-//std::ostream &operator<<(std::ostream &os, const IDna &dna);
-
-class Dnasequence : public IDna {
-public:
-    boost::shared_ptr<IDna> m_dna;
-
-    explicit Dnasequence(boost::shared_ptr<IDna> dna);
-
-    virtual Nucleotide operator[](size_t index) const;
-
-    virtual size_t size() const;
-
-    virtual void execute() const;
-};
 
 class PairDecerator : public DnaDecerator {
 
@@ -53,8 +34,6 @@ public:
     virtual size_t size() const;
 
     virtual Nucleotide operator[](size_t index) const;
-
-    virtual void execute() const;
 
 
 };
@@ -68,8 +47,6 @@ public:
 
     virtual Nucleotide operator[](size_t index) const;
 
-    virtual void execute() const;
-
 
 };
 
@@ -81,8 +58,6 @@ public:
     virtual size_t size() const;
 
     virtual Nucleotide operator[](size_t index) const;
-
-    virtual void execute() const;
 
 
 };
@@ -96,10 +71,11 @@ public:
 
     virtual Nucleotide operator[](size_t index) const;
 
-    virtual void execute() const;
 
 private:
     std::vector<boost::shared_ptr<IDna> > m_data;
+    std::vector<size_t> m_sizes;
+    size_t m_size;
 
 };
 

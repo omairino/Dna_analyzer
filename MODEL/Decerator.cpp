@@ -19,27 +19,10 @@ Nucleotide PairDecerator::operator[](size_t index) const {
 }
 
 
-void PairDecerator::execute() const {
-    DnaDecerator::execute();
-
-}
 
 
-Nucleotide Dnasequence::operator[](size_t index) const {
-    return (*m_dna)[index];
-}
 
-size_t Dnasequence::size() const {
-    return m_dna->size();
-}
 
-void Dnasequence::execute() const {
-    std::cout << "start Decerator\n";
-}
-
-Dnasequence::Dnasequence(boost::shared_ptr<IDna> dna) : m_dna(dna) {
-
-}
 
 
 SliceDecerator::SliceDecerator(boost::shared_ptr<IDna> dna, size_t from, size_t to) : DnaDecerator(dna) {
@@ -48,13 +31,7 @@ SliceDecerator::SliceDecerator(boost::shared_ptr<IDna> dna, size_t from, size_t 
 
 }
 
-void SliceDecerator::execute() const {
-    DnaDecerator::execute();
-    if (m_from < 0 || m_from > size() || m_to < 0 || m_to > size() || m_from > m_to) {
-        std::cout << size() << " length " << " from " << m_from << " to " << m_to << std::endl;
-        throw std::invalid_argument("Invalid argument for method slice");
-    }
-}
+
 
 size_t SliceDecerator::size() const {
     return m_to - m_from;
@@ -88,27 +65,32 @@ Nucleotide ReplaceDecerator::operator[](size_t index) const {
     return (*DnaDecerator::m_dna)[index];
 }
 
-void ReplaceDecerator::execute() const {
-    DnaDecerator::execute();
-}
+
 
 ConcatDecerator::ConcatDecerator(std::vector<boost::shared_ptr<IDna> > &data) : m_data(data), DnaDecerator(data[0]) {
+
+    for (size_t i = 0; i < m_data.size(); i++) {
+        m_size += m_data[i]->size();
+    }
+
 }
 
 size_t ConcatDecerator::size() const {
-    size_t size = 0;
-
-    for (size_t i = 0; i < m_data.size(); i++) {
-        size += m_data[i]->size();
-    }
-    return size;
+    return m_size;
 }
 
 Nucleotide ConcatDecerator::operator[](size_t index) const {
-    
-    return DnaDecerator::operator[](index);
+    size_t size = 0;
+    size_t size1 = 0;
+    size_t n;
+    for (size_t i = 0; i < m_data.size(); i++) {
+        size += m_data[i]->size();
+        if (size > index) {
+            n = i;
+            break;
+        }
+        size1 += m_data[i]->size();
+    }
+    return (*m_data[n])[index-size1];
 }
 
-void ConcatDecerator::execute() const {
-    DnaDecerator::execute();
-}
